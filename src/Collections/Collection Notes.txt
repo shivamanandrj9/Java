@@ -1,0 +1,5 @@
+Following are the interfaces which are implemented by the different classes that we use in collection.
+
+1) List(Interface) -> ArrayList, LinkedList, Stack, Vector
+2) Set -> EnumSet, HashSet, LinkedHashSet, TreeSet
+3) Queue -> ArrayDeque, LinkedList, PriorityQueue
