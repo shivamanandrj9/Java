@@ -1,0 +1,16 @@
+JMX is a framework made up of various tools and components that work together to provide a standardized way to monitor and manage your Java application.
+
+Here’s how these tools and components fit together within JMX:
+
+MBeans (Managed Beans): These are the building blocks — Java objects that represent the resources or parts of your application that you want to monitor and manage. You can think of MBeans as the "sensors" or "controllers" of JMX, exposing data and actions for external tools to interact with.
+
+MBean Server: This is like the "control center" that holds and organizes all the MBeans. The MBean Server acts as a registry, enabling external tools to access the MBeans it contains.
+
+JMX Client Tools: Tools like jconsole or other JMX-compatible clients connect to the MBean Server and interact with the MBeans. These clients provide a user interface (like jconsole) or programmatic access (like custom Java code) to monitor attributes, execute operations, and receive notifications from MBeans.
+
+Monitoring and Management Protocols: JMX also includes protocols that allow remote access to applications, so you can monitor and manage them over a network.
+
+In summary:
+
+JMX as a whole provides the framework and API for monitoring and managing applications.
+MBeans, the MBean Server, and clients like jconsole are the specific components and tools within JMX that make it possible to observe and control a Java application in real-time.

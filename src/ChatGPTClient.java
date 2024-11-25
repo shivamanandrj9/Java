@@ -12,7 +12,7 @@ import java.io.*;
 public class ChatGPTClient {
     private static final String API_KEY = "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";
     private static final String API_URL = "https://api.groq.com/openai/v1/chat/completions";
-    private static String usage = "making an egg curry";
+    private static String usage = "";
 
 
     private static void disableSSLVerification() throws Exception {
@@ -50,7 +50,7 @@ public class ChatGPTClient {
                 // Create JSON body
                 JSONObject messageObject = new JSONObject();
                 messageObject.put("role", "user");
-                messageObject.put("content", "List the ingredients used to "+usage+". Just give me list like response with numbering. No need for explanation or any header. Just the list");
+                messageObject.put("content", "List the ingredients used to "+usage+". Just give me list like response with numbering. No need for explanation or any header. Just the list. Also exclude the items that are not generally ordered from an online platform");
 
                 JSONArray messagesArray = new JSONArray();
                 messagesArray.put(messageObject);

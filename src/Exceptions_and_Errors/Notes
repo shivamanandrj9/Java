@@ -1,0 +1,29 @@
+Types of errors:
+
+1) Syntax error
+2) Logical Error
+3) Runtime Error -> run time ke time code phat gaya
+
+Exception Handling is a way to handle the runtime errors so that normal flow of the application can be maintained.
+The jvm throws an object during runtime when an error occurs. This object is called an exception object.
+
+--------------------------------------------
+
+Types of default exceptions in java
+
+Runtime Exceptions:
+
+1) Arithmetic Exception -> divide by zero
+2) Null Pointer Exception -> when we try to access the object which is not created. Example: String s = null; s.length();
+3) Index Out of Bound Exception -> when we try to access the index which is not present in the array. Example: int[] arr = new int[5]; arr[6];
+4) Illegal Argument Exception -> when we pass the wrong argument to the method. Example: Math.sqrt(-1);
+
+IO Exceptions:
+
+1) File Not Found Exception
+2) EOF Exception
+
+---------------------------------------------
+
+
+
