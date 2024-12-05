@@ -1,0 +1,10 @@
+Map interface is not a subtype of collection interface. It is a separate interface. It is used to store key-value pairs. It is an object that maps keys to values. A map cannot contain duplicate keys; each key can map to at most one value.
+
+You can implement maps in Java from two interfaces: Map and SortedMap.
+The SortedMap interface extends the Map interface.
+There are three classes to implement maps. These three classes are HashMap, LinkedHashMap, and TreeMap.
+
+i.e. HashMap implements Map interface
+     LinkedHashMap implements Map interface
+     TreeMap implements SortedMap interface
+

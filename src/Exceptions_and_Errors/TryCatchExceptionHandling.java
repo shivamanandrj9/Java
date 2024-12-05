@@ -11,7 +11,7 @@ public class TryCatchExceptionHandling {
             try{
                 int ans=nums[i]/dens[i];
             }
-            catch(ArithmeticException e)
+            catch(ArithmeticException e) //we can also use or operator | to catch multiple exceptions
             {
                 System.out.println("Arithmetic Exception"+e);
             }

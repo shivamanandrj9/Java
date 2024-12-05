@@ -1,29 +1,34 @@
-package Serialization_and_Deserialization;
+//JsonGetter is used to serialize a return value of a method
+//the method is called during the serialization and then the return value is serialized
+//the method must not be static and should be public
 
+package Serialization_and_Deserialization.Serialization;
+
+//these three are important
+
+//jackson annotation
 import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.core.JsonProcessingException;
+//jackson databind
 import com.fasterxml.jackson.databind.ObjectMapper;
+//jackson core
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class JsonRawValueAnnotation {
+public class JsonValueAnnotation {
     public static void main(String[] args) throws JsonProcessingException {
 
         //this object mapper thing that we use to parse the object is automatically done by the framework like DropWizard
         ObjectMapper objectMapper = new ObjectMapper();
-        Person2 person2 = new Person2("Shivam","pwd");
+        Person4 person = new Person4("Shivam","pwd");
 
-        String jsonString=objectMapper.writeValueAsString(person2);
+        String jsonString=objectMapper.writeValueAsString(person);
         System.out.println(jsonString);
     }
-
-
 }
-
-//JsonRawValue annotation is used above a string that is already serialized. That means if a string is already in a json format. Then you need to annotate
-//it to be parsed as a json
 
 
 
@@ -31,29 +36,23 @@ public class JsonRawValueAnnotation {
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonPropertyOrder(value = {"name","scores","password"},alphabetic=true)
-class Person2{
+class Person4{
     public String name;
     private String password;
 
-    @JsonRawValue
-    public final String alreadySerializedString="{ \"name\": \"Alice\", \"age\": 30, \"isMember\": true }";
 
-    //this will noe be serialized
     public int anyMethod(){
         return 1;
     }
 
-
-    @JsonGetter("password")
+    //Only this will pe parsed a string. We cannot use @JsonValue at multiple places.
+    @JsonValue
     public String getPassword()
     {
         return password;
     }
 
 
-    //This will also be captured while serialization
-    @JsonGetter("scores")
     public List<Integer> scores(){
         List<Integer> scores= new ArrayList<>();
         scores.add(1);

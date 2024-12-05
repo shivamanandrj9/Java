@@ -1,4 +1,4 @@
-Following are the interfaces which are implemented by the different classes that we use in collection.
+Following are the interfaces which are implemented by the different classes that we use in collection. These all extend the Collection interface.
 
 1) List(Interface) -> ArrayList, LinkedList, Stack, Vector
 2) Set -> EnumSet, HashSet, LinkedHashSet, TreeSet

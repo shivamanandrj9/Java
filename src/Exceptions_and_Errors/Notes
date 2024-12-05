@@ -25,5 +25,21 @@ IO Exceptions:
 
 ---------------------------------------------
 
+Checked and Unchecked Exception
+
+Checked Exception: The exceptions which are checked at compile time are called checked exceptions. Example: IOException, SQLException, etc.
+These exceptions will not let you compile the code until you handle it.
+
+Methods to handle:
+1) use a try-catch block
+2) use throws keyword -> isme jo method exception ka root hai, uske method definition ke samne hi throws keyword use karte hain. Ab jo is method ko call karega uski duty hai ki isko handle kare. Nahi to agar usko karna ka man nahi hai to usko bhi throws keyword use karna padega. Agar baat main tak pahuchi and main ne bhi throws keyword use kar diya to finally JVM ko handle karna padega aur runtime ke time exception dega.
+
+Unchecked Exception: The exceptions which are not checked at compile time are called unchecked exceptions. Example: ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException, etc.
+
+* We can use (throw new Exception();) to throw jabardasti ka exception if we want.
+
+-----------------------------------------------
+
+
 
 

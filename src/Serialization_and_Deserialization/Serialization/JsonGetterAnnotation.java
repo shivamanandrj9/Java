@@ -2,14 +2,13 @@
 //the method is called during the serialization and then the return value is serialized
 //the method must not be static and should be public
 
-package Serialization_and_Deserialization;
+package Serialization_and_Deserialization.Serialization;
 
 //these three are important
 
 //jackson annotation
 import com.fasterxml.jackson.annotation.JsonGetter;
 //jackson databind
-import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.ObjectMapper;
 //jackson core
 import com.fasterxml.jackson.core.JsonProcessingException;
