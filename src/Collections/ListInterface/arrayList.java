@@ -13,7 +13,7 @@ Normal array operations
 
 
 
-package Collections;
+package Collections.ListInterface;
 
 import java.util.*;
 

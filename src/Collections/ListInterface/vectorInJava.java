@@ -9,12 +9,9 @@ Difference between vector and arrayList
  */
 
 
+package Collections.ListInterface;
 
-
-
-package Collections.customClassHashSet;
-
-import java.util.Vector;
+import java.util.*;
 
 public class vectorInJava {
 
@@ -22,18 +19,27 @@ public class vectorInJava {
     public static void main(String[] args) {
         Vector<Integer> v=new Vector<>();
 
+        //add
         v.add(5);
         v.add(6);
         v.add(10);
 
+
+        //get
         for(int i=0;i<v.size();i++)
         {
             System.out.println(v.get(i));
         }
 
+        //update
+        v.set(1,15);
+
+        //delete
         v.remove(1);
 
         System.out.println(v);
+
+        Collections.sort(v);
 
 
     }
