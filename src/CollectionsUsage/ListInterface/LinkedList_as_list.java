@@ -27,7 +27,7 @@ DELETING AN ELEMENT
  */
 
 
-package Collections.ListInterface;
+package CollectionsUsage.ListInterface;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package Collections.ListInterface;
+package CollectionsUsage.ListInterface;
 
 /*
 

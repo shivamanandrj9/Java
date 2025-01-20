@@ -20,7 +20,7 @@ basically it just checks whether the hash value of given element already exists 
  */
 
 
-package Collections;
+package CollectionsUsage.SetInterface;
 
 
 import java.util.HashSet;

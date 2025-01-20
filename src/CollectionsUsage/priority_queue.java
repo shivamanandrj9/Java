@@ -8,7 +8,7 @@ min heap, max heap
 
  */
 
-package Collections;
+package CollectionsUsage;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

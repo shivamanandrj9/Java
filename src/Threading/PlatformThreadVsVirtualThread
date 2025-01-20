@@ -1,0 +1,30 @@
+***** Platform (Traditional) Thread *****
+
+1. Platform(Traditional) threads are managed directly by the Operating System.
+2. It is expensive and creating a thread involves OS-level resources because of the below reasons.
+
+***** Virtual Thread (JDK 21+) *****
+
+1. The virtual threads are managed by the JVM.
+2. The JVM reserves a fixed number of platform threads(equal to the number of cores) and deploys(mounts) virtual threads on them.
+3. There is "unmounted ready virtual threads" and "unmounted blocked virtual threads". unmounted ready virtual threads are deployed to the platform thread once they are free and if the running threads waits for any blocked I/O operations, they are queued at "unmounted blocked virtual thread". Once that is completed, they are then brought back to the "unmounted ready virtual threads".
+4. We can create a large number of virtual threads without worrying about the system memory cap.
+5. They terminate once the main thread is terminated, hence join is must
+
+***** Reasons for Expensive Platform Thread Creation *****
+
+1. System calls for thread creation involve kernel operations.
+2. Context switching adds overhead.
+3. Fixed stack memory (~1 MB per thread) is reserved, even if unused.
+4. Allocates thread-specific structures like file descriptors and thread-local storage.
+5. Number of thread are limited by OS configuration.
+6. OS handles scheduling and fairness, requiring frequent state checks.
+7. Initializing thread-safe primitives adds computational overhead.
+
+
+
+
+
+
+
+

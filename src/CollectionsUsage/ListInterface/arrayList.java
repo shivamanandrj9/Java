@@ -13,12 +13,9 @@ Normal array operations
 
 
 
-package Collections.ListInterface;
+package CollectionsUsage.ListInterface;
 
 import java.util.*;
-
-
-
 
 
 public class arrayList {

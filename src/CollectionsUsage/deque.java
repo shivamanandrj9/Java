@@ -5,7 +5,7 @@ Normal deque jo hota hai c++ me
  */
 
 
-package Collections;
+package CollectionsUsage;
 
 import java.util.ArrayDeque;
 

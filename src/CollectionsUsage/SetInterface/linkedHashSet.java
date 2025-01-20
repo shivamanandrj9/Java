@@ -9,7 +9,7 @@ It calculated the hash value of the elements that is going to be inserted and al
  */
 
 
-package Collections;
+package CollectionsUsage.SetInterface;
 
 import java.util.LinkedHashSet;
 

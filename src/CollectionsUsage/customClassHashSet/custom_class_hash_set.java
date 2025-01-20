@@ -1,6 +1,4 @@
-package Collections.customClassHashSet;
-
-import java.util.HashSet;
+package CollectionsUsage.customClassHashSet;
 
 
 public class custom_class_hash_set {

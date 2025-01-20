@@ -8,7 +8,7 @@ remove(): O(logN)
 
  */
 
-package Collections;
+package CollectionsUsage.SetInterface;
 
 import java.util.TreeSet;
 

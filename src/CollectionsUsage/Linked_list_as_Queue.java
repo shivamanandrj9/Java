@@ -30,7 +30,7 @@ remove(index_val) : O(n)
  */
 
 
-package Collections;
+package CollectionsUsage;
 
 import java.util.LinkedList;
 

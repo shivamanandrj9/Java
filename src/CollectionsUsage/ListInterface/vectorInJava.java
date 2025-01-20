@@ -9,7 +9,7 @@ Difference between vector and arrayList
  */
 
 
-package Collections.ListInterface;
+package CollectionsUsage.ListInterface;
 
 import java.util.*;
 
