@@ -25,4 +25,4 @@ public void setDrawShape(DrawShape d)
 5) Field Injection: We can simply put @Inject over the variable *public DrawShape drawShape;* . It will automatically first create object using the no arg const then use the binding file *ShapeModule* in this case to inject class of DrawShape implementation.
 
 
-
+6) If I have initialized an injector A somewhere, and then called A to get instance of any class B and B again want to declare an injector object in order to get instance of a class that it does not want to declare in the properties. It can simply annotate the injector B it has declared with @Inject and that injector B will now take the instance and binding of injector A.
