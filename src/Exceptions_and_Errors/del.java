@@ -2,12 +2,19 @@ package Exceptions_and_Errors;
 
 public class del {
 
-    public static void main(String[] args) {
-        int[] num={1,3,4,5};
+    public static void main(String[] args) throws ArrayIndexOutOfBoundsException {
 
-        for(int i=0;i<num.length;i++)
+        int[] arr=new int[5];
+        arr[0]=0;
+        arr[1]=-1;
+        arr[2]=1;
+        for(int i=0;i<5;i++)
         {
-            System.out.println(num[i]);
+            try{
+                System.out.println(arr[arr[i]]);
+            }catch(RuntimeException e){
+                System.out.println(e);
+            }
         }
     }
 

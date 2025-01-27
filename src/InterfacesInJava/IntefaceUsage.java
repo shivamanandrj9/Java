@@ -4,6 +4,7 @@ public class IntefaceUsage {
     public static void main(String[] args) {
         MyClass myClass = new MyClass();
         myClass.sayHi();
+
     }
 }
 
