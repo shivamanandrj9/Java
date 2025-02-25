@@ -1,17 +1,9 @@
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Map;
+import java.util.*;
 
-public class del {
+public class del{
     public static void main(String[] args) {
-
-        ArrayList<Map.Entry<String,Integer>> x=new ArrayList<>();
-
-        x.add(Map.entry("Shivam",5));
-        x.add(Map.entry("Rohan",10));
-
-        x.sort((a,b)-> a.getValue()-b.getValue());
-        System.out.println(x);
+        color myfavcolor=color.RED;
+        System.out.println(color.RED.HindiName);
 
 
     }
@@ -19,7 +11,14 @@ public class del {
 
 }
 
-class comparator{
+enum color{
+    RED("Laal"),BLUE("Neela"),GREEN("Hara");
+
+    public String HindiName;
+
+    color(String giveName){
+        this.HindiName=giveName;
+    }
 
 }
 

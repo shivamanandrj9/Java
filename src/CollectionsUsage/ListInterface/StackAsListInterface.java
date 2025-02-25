@@ -33,7 +33,7 @@ public class StackAsListInterface {
 
         //deleting
         ls.remove(1);
-        ls.removeLast();
+
 
     }
 }

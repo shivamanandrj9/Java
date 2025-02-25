@@ -17,7 +17,7 @@ public class Daemon {
         };
 
         Thread t1=new Thread(runnable);
-        t1.setDaemon(true); //this will make this thread stop once the main method stops.
+        t1.setDaemon(true); //this will make this thread stop once the main method stops otherwise main will wait until this thread is done with its execution.
         t1.start();
 
         sleep(2000); //2 baar hi chal paega

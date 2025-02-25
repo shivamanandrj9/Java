@@ -5,6 +5,9 @@ public class BasicThread {
 
     public static void main(String[] args) {
 
+        /*
+        Class Runnable is a functional interface that only has once method that need to be overrided i.e. run method. So we create any class that implements this functional interface and override its run method. Or we can use lambda function as we have done below.
+         */
 
         Runnable runnable = () -> {
             for (int i = 0; i < 5; i++) {
@@ -17,6 +20,7 @@ public class BasicThread {
             }
         };
 
+        //This is a platform thread. This is a non-daemon thread
         Thread thread1 = new Thread(runnable,"This thread ");
         thread1.start();
 
