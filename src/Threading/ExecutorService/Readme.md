@@ -1,6 +1,6 @@
 **Remember: Thread hum kitne bhi bana sakte, core pe depend karega parallely kitna chalega.**
 
-## Executor Service ##
+# Executor Service #
 
 The ```Thread thread1 = new Thread(runnable,name)``` allocates a platform thread. If we want 100 processes to go in parallel, each will create a new platform thread and this is bad because
 1. is expensive to create thread as each thread requires systemcalls() and CPU time to create.
@@ -12,4 +12,32 @@ The executor service is a higher level replacement for working with threads dire
 To choose an ideal pool size
 1. If the tasks are CPU intensive, then the number of threads should be equal to the number of cores. This is because if more threads are created then cpu will be busy in context switching and this will add faltu ka overhead.
 2. If the tasks are IO intensive, then the number of threads should be greater than the number of cores. This is because with the executor service our threads are limited, now let's say all of our reserved thread get busy with the IO operation, we won't be able to deploy new threads. If we have multiple threads, other thread of our program can go ahead.
+
+***Refer to ExecutorServiceExmpl***
+
+## Thread Pool Types ##
+
+### Fixed Thread Pool ###
+- Creates fixed number of thread
+- Whenever a thread is free, a new task is deployed there from the blocking queue.
+- Even if a thread dies due to an unchecked exception, the executor service will start a new one to maintain constant thread pool size.
+
+### Cached Thread Pool ###
+- Not fixed number of threads.
+- It has a synchronous queue that has only space for a single task.
+- It checks among its created thread whether they are free, If no one is free then it will create another thread.
+- If thread is idle for 60 seconds, it is killed.
+
+### Scheduled Thread Pool ###
+- Has a fixed number of threads.
+- Has a delay queue, here the tasks are arranged based on the time after which they are supposed to be scheduled.
+- Different types are mentioned in ScheduledThreadPool.java
+
+### Single Threaded Executor ###
+- Similar to fixed Thread Pool but has only one thread.
+- Ideal for sequential task (task1, then task2, then task3 etc.)
+
+**About the different parameter in the ExecutorService https://www.youtube.com/watch?v=Dma_NmOrp1c**
+
+
 

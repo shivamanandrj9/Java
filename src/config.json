@@ -1,0 +1,130 @@
+{
+  "super_campaign_statuses": [
+    "DRAFT",
+    "PROCESSING",
+    "TEST_READY",
+    "ACTIVE",
+    "PAUSED",
+    "ENDED",
+    "COMPLETED",
+    "DISABLED",
+    "PROCESSING_FAILED"
+  ],
+  "mediaContentValidationConfig": "{\"titleMinLength\": 3,\"titleMaxLength\": 32,\"descriptionMaxLength\": 280,\"hashTagMaxSize\": 10,\"individualHashTagMaxSize\": 50}",
+  "uiConfig": "[{\"clientId\": \"fps\", \"data\" : {\"pageId\": \"PAGXZMHEZRPUQ\",\"maxFileSizeInMB\": 1024, \"allowedFormats\":[\"MP4\"], \"maxNumberOfFiles\":30}}]",
+  "campaign_statuses": [
+    "DRAFT",
+    "PROCESSING",
+    "TEST_READY",
+    "ACTIVE",
+    "PAUSED",
+    "ENDED",
+    "LEADERBOARD_DECLARED",
+    "REWARD_DISBURSED",
+    "COMPLETED",
+    "DISABLED",
+    "PROCESSING_FAILED"
+  ],
+  "productMatchConfig": "{\"noOfVerticals\":6,\"noOfProducts\":10,\"multiplyFactorForVertical\":2,\"multiplyFactorForProduct\":2,\"visenzeRetry\":3}",
+  "hdfsConfig": "{\"appPath\":\"feeds\",\"serviceId\":\"gapcluster\",\"hadoopUser\":\"hdfs\",\"nameNodeToHostMap\":{\"nn1\":\"gap-hbase-prod-namenode-1480958\",\"nn2\":\"gap-hbase-prod-namenode-1480874\"},\"rpcPort\":8020,\"httpPort\":50070,\"environment\":\"stage\"}",
+  "authenticatorConfig": "{ \"authenticationProviderUrl\": \"https://accounts.flipkart.com\", \"clientId\": \"cgt\", \"logoutRedirectUrl\": \"https://accounts.flipkart.com/api/1/sso/logout\", \"loginRedirectPath\": \"api/v1/login_callback\",\"appLoginRedirectPath\": \"api/v1/app/login_callback\", \"frontendBasePath\": \"http://10.83.36.247/\"}",
+  "cdnConfig": "{ \"warmUpRetryCount\": 5, \"height\": 700, \"width\": 700, \"warmUpRetryIntervalInMs\": 2000}",
+  "loginFilterConfig": "{\"loginFilterEnabled\": true}",
+  "visenzeConfig": "{\"endPoint\":\"/v1/product/search_by_image\",\"appKey\":\"f17ed1990ed2ef7e630eaf82e68955ed\",\"placementId\":637,\"attrsToGet\":\"cmsVertical,idealFor\",\"returnFieldsMapping\":true,\"score\":true,\"detection\":\"all\",\"searchAllObjects\":true,\"dedup\":true}",
+  "authConfig": "{\"clientId\": \"user-feeds-cgt-stage\",\"authnUrl\": \"http://service.authn-prod.fkcloud.in\",\"clientSecret\": \"j3/CblATmWIFWZwoWMl07YGnfvRqyEkVXlfzXiYIYnaeqmjR\"}",
+  "fileValidationConfig": "{\"imageFileSizeLimit\":26214400,\"videoFileSizeLimit\":2000000000,\"audioFileSizeLimit\":104857600,\"bulkUploadFileSizeLimit\":419430400,\"fileNameLengthLimit\":150,\"fileNameRegex\":\"^[a-z0-9-_() ]+$\",\"minimumDurationToTrimVideo\":300,\"supportedVideoFormats\":[\"MP4\",\"_3GP\",\"AVI\",\"QUICK_TIME\"],\"supportedAudioFormats\":[\"MP3\",\"AAC\"],\"supportedImageFormats\":[\"JPEG\",\"JPG\",\"PNG\"],\"imageDimensionsMaxLimit\": 8000}",
+  "ssoClientConfig": "{\"clientSecret\": \"s5xXLpakPf7099VkQC5eqSKE6UbjnsWpdxo6fiKr/Evi2Gj0\",\"ssoHost\": \"10.83.37.179\"}",
+  "sessionFilterConfig": "{\"sessionFilterState\":false}",
+  "jenkinsTargetHost": "http://10.24.6.31",
+  "playlistConfig": "{\"minContentIdAllowed\": 3,\"maxContentIdAllowed\": 30, \"tabs\": [\"DRAFT\", \"ACTIVE\", \"INACTIVE\", \"ARCHIVED\"], \"playlistMetadata\": {\"backgroundImageAspectRatio\": \"338:452\",  \"backgroundStartBleedingColor\":\"#00000000\", \"backgroundStopBleedingColor\": \"#00000000\"}}",
+  "acl_elasticsearch_indices_JUEGO": [
+    ".*sidecar_client_freefall.*",
+    ".*sidecar_client_jumpjump.*",
+    ".*sidecar_client_bubbleshooter.*"
+  ],
+  "feedbackConfig": "{\"postTable\":\"1006\",\"personaTable\":\"1007\",\"personaRecommendationTable\":\"1008\"}",
+  "jobManagerClientConfig": "{\"tenantId\": \"user-feeds-cgt\", \"authTargetClient\": \"job-manager-preprod\"}",
+  "hudsonProductRequestConfig": "{\"fetchCount\": 200}",
+  "currencyTypes": [
+    "GEMS"
+  ],
+  "processingConfig": "[{\"clientId\": \"feeds\", \"warmUpConfig\": {\"enabled\": true }, \"d42Configuration\": {\"accessKey\": \"4IMW5BSFV4GDH0C9TTE8\", \"secretKey\": \"JRPDmaFP3KUelDezir6orqN1qy0DJY9SEtLQlusJ\", \"endPoint\": \"http://10.47.2.22\", \"bucketName\": \"user-feeds072022\", \"disableDynamicBucketCreation\": true, \"user\": \"fk-gap-user-feeds-cgt\", \"rukminiEndpoint\": \"https://rukminim1.flixcart.com\", \"akamaiEndpoint\": \"https://engage2.flixcart.com/static\", \"retryCount\": 3 }, \"gcsConfiguration\": {\"accessKey\": \"GOOG1ELN75UOCSH6CKOBVK3KNQ2IEUWENXE5KXRHXXFYAZ4NIYLOWLDQAEBMQ\", \"secretKey\": \"mnUAtEa971I6vSYlR5AsMILn1QredVnqAgJoWNZ8\", \"endPoint\": \"https://storage.googleapis.com\", \"bucketName\": \"fk-p-user-feeds072022\", \"disableDynamicBucketCreation\": true, \"projectId\": \"fk-prod-user-feeds-cgt-service\", \"region\": \"asia-south1\", \"user\": \"fk-gap-user-feeds-cgt\", \"rukminiEndpoint\": \"https://rukminim1.flixcart.com\", \"akamaiEndpoint\": \"https://engage2.flixcart.com/static\", \"retryCount\": 3 } }, {\"clientId\": \"2gud\", \"d42Configuration\": {\"accessKey\": \"S05S9Q0L204621E7EHSD\", \"secretKey\": \"ixweylQKotTAKC9X5A7saCnwLrONyQAN3GgRsYkt\", \"endPoint\": \"http://10.47.2.22\", \"bucketName\": \"user-2gudsocial072022\", \"disableDynamicBucketCreation\": true, \"user\": \"2gud-contente\", \"rukminiEndpoint\": \"https://rukminim1.flixcart.com\", \"akamaiEndpoint\": \"https://engage2.flixcart.com/static\", \"retryCount\": 3 }, \"gcsConfiguration\": {\"accessKey\": \"GOOG1EVCUSGOWTBRBYQYTBWN3W434R33ANCNGAGASYLO7WXW7FSWYDLFZIPYA\", \"secretKey\": \"L78HTLyNm3wWGyLnZV+4reNqb77h4h4OnpoJyJjY\", \"endPoint\": \"https://storage.googleapis.com\", \"bucketName\": \"fk-p-user-2gudsocial072022\", \"disableDynamicBucketCreation\": true, \"projectId\": \"fk-two-gud-content\", \"region\": \"asia-south1\", \"user\": \"2gud-content\", \"rukminiEndpoint\": \"https://rukminim1.flixcart.com\", \"akamaiEndpoint\": \"https://2gud-live-cdn.akamaized.net/media\", \"retryCount\": 3 } }, {\"clientId\": \"social-multimedia\", \"d42Configuration\": {\"accessKey\": \"S05S9Q0L204621E7EHSD\", \"secretKey\": \"ixweylQKotTAKC9X5A7saCnwLrONyQAN3GgRsYkt\", \"endPoint\": \"http://10.47.2.22\", \"bucketName\": \"user-2gudsocial072022\", \"disableDynamicBucketCreation\": true, \"user\": \"2gud-contente\", \"rukminiEndpoint\": \"https://rukminim1.flixcart.com\", \"akamaiEndpoint\": \"https://engage2.flixcart.com/static\", \"retryCount\": 3 }, \"gcsConfiguration\": {\"accessKey\": \"GOOG1EVCUSGOWTBRBYQYTBWN3W434R33ANCNGAGASYLO7WXW7FSWYDLFZIPYA\", \"secretKey\": \"L78HTLyNm3wWGyLnZV+4reNqb77h4h4OnpoJyJjY\", \"endPoint\": \"https://storage.googleapis.com\", \"bucketName\": \"fk-p-user-2gudsocial072022\", \"disableDynamicBucketCreation\": true, \"projectId\": \"fk-two-gud-content\", \"region\": \"asia-south1\", \"user\": \"2gud-content\", \"rukminiEndpoint\": \"https://rukminim1.flixcart.com\", \"akamaiEndpoint\": \"https://2gud-live-cdn.akamaized.net/media\", \"retryCount\": 3 } }, {\"clientId\": \"rnr\", \"d42Configuration\": {\"accessKey\": \"TTJKOTGS20OES35F1SYC\", \"secretKey\": \"N21zTf2BpCWNIBKKeG4IgyKXCuXjw4Xp8BYhF8sT\", \"endPoint\": \"http://10.47.2.22\", \"bucketName\": \"user-rnr072022\", \"disableDynamicBucketCreation\": true, \"user\": \"rnr-prod\", \"rukminiEndpoint\": \"https://rukminim1.flixcart.com\", \"akamaiEndpoint\": \"https://engage2.flixcart.com/static\", \"retryCount\": 3 }, \"gcsConfiguration\": {\"accessKey\": \"GOOG1EK3GZ2XIBWVTD7LYNGK5K7DLZJLL5LIKJD2CSLU4IOWENAW6ZHKH23ZY\", \"secretKey\": \"tBN1yPXFfhoN6W8auvuka3r+SPI3MVVyVzOfzTmQ\", \"endPoint\": \"https://storage.googleapis.com\", \"bucketName\": \"fk-p-user-rnr\", \"projectId\": \"fk-blob-io-ugc\", \"region\": \"asia-south1\", \"user\": \"rnr-prod\", \"rukminiEndpoint\": \"https://rukminim1.flixcart.com\", \"akamaiEndpoint\": \"https://engage2.flixcart.com/static\", \"retryCount\": 3 } }, {\"clientId\": \"video-rnr\", \"warmUpConfig\": {\"enabled\": true }, \"d42Configuration\": {\"accessKey\": \"TTJKOTGS20OES35F1SYC\", \"secretKey\": \"N21zTf2BpCWNIBKKeG4IgyKXCuXjw4Xp8BYhF8sT\", \"endPoint\": \"http://10.47.2.22\", \"bucketName\": \"user-rnr072022\", \"disableDynamicBucketCreation\": true, \"user\": \"rnr-prod\", \"rukminiEndpoint\": \"https://rukminim1.flixcart.com\", \"akamaiEndpoint\": \"https://engage2.flixcart.com/static\", \"retryCount\": 3 }, \"gcsConfiguration\": {\"accessKey\": \"GOOG1EK3GZ2XIBWVTD7LYNGK5K7DLZJLL5LIKJD2CSLU4IOWENAW6ZHKH23ZY\", \"secretKey\": \"tBN1yPXFfhoN6W8auvuka3r+SPI3MVVyVzOfzTmQ\", \"endPoint\": \"https://storage.googleapis.com\", \"bucketName\": \"fk-p-user-rnr\", \"projectId\": \"fk-blob-io-ugc\", \"region\": \"asia-south1\", \"user\": \"rnr-prod\", \"rukminiEndpoint\": \"https://rukminim1.flixcart.com\", \"akamaiEndpoint\": \"https://engage2.flixcart.com/static\", \"retryCount\": 3 } }, {\"clientId\": \"fps\", \"gcsConfiguration\": {\"accessKey\": \"GOOG1EVCUSGOWTBRBYQYTBWN3W434R33ANCNGAGASYLO7WXW7FSWYDLFZIPYA\", \"secretKey\": \"L78HTLyNm3wWGyLnZV+4reNqb77h4h4OnpoJyJjY\", \"endPoint\": \"https://storage.googleapis.com\", \"bucketName\": \"fk-p-cgt-fps-video-test\", \"disableDynamicBucketCreation\": true, \"projectId\": \"fk-two-gud-content\", \"region\": \"asia-south1\", \"akamaiEndpoint\": \"https://2gud-live-cdn.akamaized.net/media\" } } ]",
+  "acl_jenkins_ADMIN": [
+    "/api/v1/jenkins/static/.*",
+    "/api/v1/jenkins/adjuncts/.*",
+    "/api/v1/jenkins/job/.*",
+    "/api/v1/jenkins/"
+  ],
+  "processingGroups": "[{\"groupId\":\"TWOGUD\",\"groupDetails\":{\"clientIds\":[\"social-multimedia\"],\"encodeVideoCommandTimeout\":3600000,\"cacheControlAge\":1209600,\"cachingRequired\":true}},{\"groupId\":\"DEFAULT\",\"groupDetails\":{\"clientIds\":[\"amp\",\"feeds\",\"rnr\",\"video-rnr\",\"flick\",\"n200m\"],\"encodeVideoCommandTimeout\":1800000,\"cacheControlAge\":1209600,\"cachingRequired\":false}}]",
+  "d42Configuration": "{\"accessKey\":\"4IMW5BSFV4GDH0C9TTE8\",\"secretKey\":\"JRPDmaFP3KUelDezir6orqN1qy0DJY9SEtLQlusJ\",\"endPoint\":\"http://10.47.2.22\",\"bucketName\":\"user-feeds\",\"user\":\"fk-gap-user-feeds-cgt\",\"rukminiEndpoint\":\"https://rukminim1.flixcart.com\",\"akamaiEndpoint\":\"https://engage2.flixcart.com/static\"}",
+  "varadhiConfig": "[{\"configKey\":\"cgtProcessing\",\"topicName\":\"cgt.media.processing\",\"enabled\":true}]",
+  "sessionServiceConfig": "{\"host\": \"10.83.47.177\",\"port\": 80,\"connectionTimeout\": 5000,\"operationTimeout\": 5000,\"maxConnections\": 250}",
+  "contentAttributeConfig": "{ \"contentTagsMap\" : {\"seasons\" : [\"Summer\",\"Winter\",\"Spring\",\"Rainy\",\"All Season\"],\"gender\" : [\"Male\",\"Female\",\"Neutral\"]}}",
+  "pageProfilePictureUrlsConfig": "{\"defaultUrl\": \"test\", \"pageProfilePictureUrls\": {\"A\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/c067caa8-66f5-4b0b-8dfb-6e88e98a57a0.jpg?q=100\",\"B\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/4d98f379-d6eb-4ade-b974-2807828311b6.jpg?q=100\",\"C\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/3aa31e23-4995-4292-bf9d-fe1929b67caa.jpg?q=100\",\"D\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/545b602c-c03d-42ab-be3a-606e848ae3b5.jpg?q=100\",\"E\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/b66b6b52-70ff-4943-98e4-911a2997e6f9.jpg?q=100\",\"F\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/cc0b7608-9a2c-4ec4-aa79-76974b7dfa83.jpg?q=100\",\"G\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/6e219032-a643-458f-9e40-2ae5d909a963.jpg?q=100\",\"H\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/720cdee4-baa0-4e58-978b-8a236a8829a9.jpg?q=100\",\"I\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/e4da2f31-e91d-46c2-954d-523fe8cd13a4.jpg?q=100\",\"J\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/daa0d905-7c0a-467c-b5f5-8a3f9bf25752.jpg?q=100\",\"K\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/f658d3a8-a3e8-4fe9-bded-1f3407ff33d7.jpg?q=100\",\"L\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/7d1e30e8-2f91-4ed2-a34c-f7b26d4df0d1.jpg?q=100\",\"M\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/08a7b5c8-0bb9-401c-9e66-3d9d83d903b3.jpg?q=100\",\"N\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/4986aef3-cd37-40e8-9c9d-d15d5afc2523.jpg?q=100\",\"O\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/28af66bb-89c1-4d92-bd3c-66fb8ba37157.jpg?q=100\",\"P\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/29d7742c-0368-479d-a99d-5e6e155ee4b2.jpg?q=100\",\"Q\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/d0af5985-b0d7-40d4-94ee-46caccef9f05.jpg?q=100\",\"R\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/dad37f3c-dc45-4e95-80a6-e5ebd98ff71c.jpg?q=100\",\"S\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/086bbf3e-af91-4120-813f-872acdb5bd5c.jpg?q=100\",\"T\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/c83e539d-aada-4aee-8c23-4380d27a7b6f.jpg?q=100\",\"U\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/a3ad0447-eee1-4c7a-8af8-aaaad3befd27.jpg?q=100\",\"V\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/2ed979cc-1162-4ad6-adcd-cf5fb06edacf.jpg?q=100\",\"W\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/9731d57b-d17e-416f-937a-0b3f0f4b46bf.jpg?q=100\",\"X\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/428439dc-3065-4d78-a7af-2fa0786cf1bf.jpg?q=100\",\"Y\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/f2c0bc8a-6f61-432c-a3e7-fd34894f08b9.jpg?q=100\",\"Z\": \"https://rukminim1.flixcart.com/www/100/100/promos/31/05/2023/19ff89f5-c10c-4ab1-b3f3-1586162622b8.jpg?q=100\"}}",
+  "acl_jenkins_JUEGO": [
+    "/api/v1/jenkins/static/.*",
+    "/api/v1/jenkins/adjuncts/.*",
+    "/api/v1/jenkins/job/games-3p-juego-stage-.*/build.*",
+    "/api/v1/jenkins/job/games-3p-juego-stage-.*/console"
+  ],
+  "contentValidationConfig": "{\"maxScenesInStory\": 10, \"videoContentMaxDuration\": 600000, \"gifContentMaxDuration\": 5000, \"storyContentMaxDuration\": 35000, \"validFilePrefixes\": [ \"rukminim1.flixcart.com\", \"engage2.flixcart.com\"]}",
+  "livestream_client_id_keys": "{\"fklive\":\"dhANcrgU0DAgQ6ysncMk\"}",
+  "acl_console_JUEGO": [
+    "/api/v1/console/games-internal-bubbleshooter/stage/.*"
+  ],
+  "mongoDbName": "stage-cgt",
+  "acl_kibana": [
+    "/api/v1/kibana/app/kibana.*",
+    "/api/v1/kibana/.*bundles.*",
+    "/api/v1/kibana/.*built_assets.*",
+    "/api/v1/kibana/ui.*",
+    "/api/v1/kibana/node_modules.*",
+    "/api/v1/kibana/translations.*",
+    "/api/v1/kibana/internal/spaces.*",
+    "/api/v1/kibana/internal/security/session.*",
+    "/api/v1/kibana/internal/security/me.*",
+    "/api/v1/kibana/api/licensing/info.*",
+    "/api/v1/kibana/api/core/capabilities.*",
+    "/api/v1/kibana/internal/search/es.*",
+    "/api/v1/kibana/api/saved_objects/_bulk_get.*",
+    "/api/v1/kibana/api/saved_objects/_find.*"
+  ],
+  "leaderboardTypes": [
+    "SCORE",
+    "GAME_CURRENCY"
+  ],
+  "authzConfig": "{\"authzEnabled\": true,\"authzUrl\": \"service.authzv2-prod.fkcloud.in\",\"authzPort\": 80,\"namespaceId\": \"gap-user-feeds-cgt-stage\",\"apiVersion\": 1,\"connectTimeout\": 5000}",
+  "video_functionalities": [
+    "CONTENT_SCHEDULE",
+    "CONTENT_PREVIEW",
+    "SCHEDULE_BUTTON",
+    "PREVIEW_BUTTON",
+    "SUBMIT_FOR_REVIEW",
+    "LIVE_CONTROL"
+  ],
+  "producerConfig": "{\"brokerConnectionString\":\"10.67.95.44:9092, 10.69.127.0:9092, 10.67.223.126:9092\",\"topicName\":\"feeds-cgt-s\"}",
+  "product_collection_categories": "[{\"name\": \"Women's clothing\", \"imageUrl\": \"https://rukminim1.flixcart.com/www/200/200/promos/01/08/2022/716508ff-9e91-4275-adf2-938df62f2b6e.png\"}, {\"name\": \"Women's footwear\", \"imageUrl\": \"https://rukminim1.flixcart.com/www/200/200/promos/01/08/2022/81d5e9d1-dc40-4f0f-ba63-43ceaedea67c.png\"}, {\"name\": \"Smart wearable\", \"imageUrl\": \"https://rukminim1.flixcart.com/www/200/200/promos/01/08/2022/767ee0e3-b0b1-4b42-8282-3e681bdef6cd.png\"}, {\"name\": \"Small home appliance\", \"imageUrl\": \"https://rukminim1.flixcart.com/www/200/200/promos/01/08/2022/ae4f60e1-ee90-4c10-8c47-c4821d523f41.png\"}, {\"name\": \"Men's Footwear\", \"imageUrl\": \"https://rukminim1.flixcart.com/www/200/200/promos/01/08/2022/2118730a-8d94-44f3-8e6c-beeb509ac0e8.png\"}, {\"name\": \"Men's Grooming\", \"imageUrl\": \"https://rukminim1.flixcart.com/www/200/200/promos/01/08/2022/e2cb3142-fe71-4c00-b42c-7d11ba0079ad.png\"}, {\"name\": \"Men's Clothing\", \"imageUrl\": \"https://rukminim1.flixcart.com/www/200/200/promos/01/08/2022/63de4533-614c-42b2-a2e1-5b55b60b0b04.png\"}, {\"name\": \"Home Furnishing\", \"imageUrl\": \"https://rukminim1.flixcart.com/www/200/200/promos/01/08/2022/98be9b51-ef1d-4941-86f0-60f8ce4e32c1.png\"}, {\"name\": \"Home Decor\", \"imageUrl\": \"https://rukminim1.flixcart.com/www/200/200/promos/01/08/2022/64ca032d-72ac-4831-ab14-95174fd82836.png\"}, {\"name\": \"Fashion Assecories\", \"imageUrl\": \"https://rukminim1.flixcart.com/www/200/200/promos/01/08/2022/70fc88b0-01eb-42a0-8b34-a98de7824ee3.png\"}, {\"name\": \"Electronic Accessories\", \"imageUrl\": \"https://rukminim1.flixcart.com/www/200/200/promos/01/08/2022/bfb79825-12bf-4991-9028-f5a310d4d1d6.png\"}, {\"name\": \"Beauty\", \"imageUrl\": \"https://rukminim1.flixcart.com/www/200/200/promos/01/08/2022/8251bfe7-a57c-4418-ac58-a0cb5ce43dc9.png\"}, {\"name\": \"Audio\", \"imageUrl\": \"https://rukminim1.flixcart.com/www/200/200/promos/01/08/2022/e4140b0d-b643-40a0-85f9-26e0b7393f13.png\"}]",
+  "videoProcessingTenants": [
+    "feeds",
+    "social-multimedia",
+    "fps",
+    "2gud"
+  ],
+  "bigfootConfig": "{\"enabled\": false, \"test\": false}",
+  "oAuthClientConfig": "{\"clientId\": \"c1085252b4f14bd48cd2f747966852c8\",\"clientSecret\": \"Jc88iNcDoEF4Er0qbHS8EwYlfaFKEL8sqDZOwcHdTbYuJA7z\"}",
+  "pageValidationConfig": "{\"displayNameMinLength\": 2,\"displayNameMaxLength\": 32,\"descriptionMinLength\": 10,\"descriptionMaxLength\": 120}",
+  "gcsUploadConfig": "[{\"accessKey\": \"GOOG1E4XLMRKCULW6GKSNCIQGNG6FMEYOWPYBWFD75I54PIJFAIYK7BJG7FQA\", \"secretKey\": \"QXE9JiOjRwiP9OY9VjWeFDZqCdZUjliXXJeDALXN\", \"projectId\": \"fk-video-com-service-p\", \"region\": \"asia-south1\", \"signedUrlExpiryInMin\": 10 } ]",
+  "PREMIUM_LEVEL": "{Level_1, Level_2, Level_3}",
+  "templateIdMap": "{\"DOTD_CONTENT_TRANSCODE_AND_THUMBNAIL_PROCESSING\": \"DOTD_CONTENT_TRANSCODE_AND_THUMBNAIL_PROCESSING\",\"MEDIA_THUMBNAIL_PROCESSING\": \"MEDIA_THUMBNAIL_PROCESSING\",\"SIM_LIVE_CONTENT_TRANSCODE\": \"SIM_LIVE_CONTENT_TRANSCODE\",\"GENERIC_VIDEO_TRANSCODING_AND_THUMBNAIL_PROCESSING\": \"VIDEO_TRANSCODING_AND_THUMBNAIL_PROCESSING\",\"GENERIC_VIDEO_TRANSCODING_PROCESSING\": \"VIDEO_TRANSCODING_PROCESSING\",\"GENERIC_THUMBNAIL_PROCESSING\": \"THUMBNAIL_PROCESSING_PROCESSING\"}",
+  "roleBasedFunctionalityConfig": "{ \"roleFunctionality\" : {\"VIDEOS_ADMIN\": [\"CONTENT_SCHEDULE\" ,\"CONTENT_PREVIEW\",\"SCHEDULE_BUTTON\",\"PREVIEW_BUTTON\",\"LIVE_CONTROL\" , \"SUBMIT_FOR_REVIEW\"],   \"MANAGER\":[\"SCHEDULE_BUTTON\",\"PREVIEW_BUTTON\",\"SUBMIT_FOR_REVIEW\"],\"EDITOR\":[\"SUBMIT_FOR_REVIEW\"]}}",
+  "acl_grafana_JUEGO": [
+    "/api/v1/grafana/d/games-3p-juego.*",
+    "/api/v1/grafana/api/dashboards/uid/games-3p-juego.*",
+    "/api/v1/grafana/public.*",
+    "/api/v1/grafana/api/datasources/*",
+    "/api/v1/grafana/api/annotations.*",
+    "/api/v1/grafana/api/datasources.*"
+  ],
+  "iamConfig": "{\"sessionServiceConfig\": {\"host\": \"10.83.47.177\",\"port\": 80,\"connectionTimeout\": 5000,\"operationTimeout\": 5000,\"maxConnections\": 250  },\"jwtConfig\": {\"publicKey\": \"-----BEGIN PUBLIC KEY-----MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEApBkhl63ZmU8DkdmOoVW5OwaDPQ+YyenvraYD/oKm+SQSdmfJN+HneKdJHRYoARzgmxyCc09CZu6JjphaDO2ZhrGY1wUP0DstfKdY6WVuQvN/etxCk+6QHIqWG+Up6BJdGROmnOZe1UtODmY19c8H3Sx9SKe1MkZtHPJpwxu7DjyQ+vxGAALmzFRTIxGtnoS8OrLTEGeIIlT+tpptRZh9pfXyVPGV1setE++Kmv+fQvHHhtrK/zGDWs6DPPl2iZgprg/hBILJpd7rOeoJKAhJ7qKMUubJhMBOWX3X7oM9SBiRohxFwsOC7I3vGTz4qXfRb2JymsUxZ+gWcHrJ1xcmPxZrCewVP7RNnqc1rhn2P0Z+yliR6LeIEPHww6pjHEDivjzp5n4KGP2wgK8MY49SrkcCULJOsp8aQsYiUr9B1GHVQsRkNDPeijVSKqwpEDky/K+5tq9WbQn4gFrnTPU7GKu5AisMWLfYBUoyko1BlWBA8U8Blsed2X/7g5ewIitrygzQLM1HFvQ2dpX+RPLGjMa3knewq+O+xVHZNGKZvIS1XVMo/IjUDNXAa/R/F8Cq2SAEu3mEK7kcOewzNEOmaU9hYBIXT+SSNpCHJ8kVXBGUgBimM543rDOgQjtbTADvnUrncYhjX4TP2qREDUOIbsREmKlIEqPQhfvS5t+8lAsCAwEAAQ==-----END PUBLIC KEY-----\"},\"kevlarSessionConfig\" : {\"kevlarApiKey\": \"cwvdkb8ykZUEd47aAL6aHAu9AiP8Wm9kjO35KgT884mnsZTP/PIAO52ftt/MIaedUPM2sshRVf5hYzNYjxQufA==\",\"tenant\": \"cgt\",\"platform\": \"cgt\", \"isRegistryPopulationEnabled\": true,\"isInvalidAtPopulateRegistryEnabled\": true}}",
+  "sellerAuthenticatorConfig": "{ \"authenticationProviderUrl\": \"http://10.24.21.252/access\", \"clientId\": \"fkstudio\", \"loginRedirectPath\": \"api/v1/seller/loginCallback\", \"appLoginRedirectPath\": \"api/v1/seller/app/loginCallback\", \"frontendBasePath\": \"http://10.83.36.247/\",\"pageRedirectPath\":\"pages/%s?createContent=true\"}"
+}
