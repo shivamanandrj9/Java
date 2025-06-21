@@ -27,6 +27,10 @@ To choose an ideal pool size
 - It has a synchronous queue that has only space for a single task.
 - It checks among its created thread whether they are free, If no one is free then it will create another thread.
 - If thread is idle for 60 seconds, it is killed.
+- I/O bound operations benefit from cached thread pools because:  
+  Dynamic Scaling: The pool creates threads as needed when I/O tasks are submitted, allowing many concurrent I/O operations.  
+  Waiting Doesn't Count as Idle: A thread waiting on I/O (e.g., network response) is still considered "busy" executing its task, not idle.  
+  Resource Management: The 60-second timeout only applies after a thread completes its task and becomes available for reuse.
 
 ### Scheduled Thread Pool ###
 - Has a fixed number of threads.

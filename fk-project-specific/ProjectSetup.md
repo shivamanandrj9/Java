@@ -1,0 +1,14 @@
+- Service
+- Resource
+- Request
+    - Objects to capture request objects
+- Response
+    - Response1DTO (DTO is used to capture the response that needed to be sent to resource)
+    - Response2DTO
+- Models/Entities
+    - DAO 
+        - Objects that capture the DB's response
+    - Enums
+    - Identifiers
+        - Objects that are used for lookups, updates, and deletes (e.g., findById(TrendId), here TrendId is Identifier)
+    - Any Other Complex Object required inside the DAO, Response, Request , Identifiers etc.

@@ -39,7 +39,7 @@ public class CompletableFutureImpl {
         String valOff1 = f1.getNow("Default value");
 
 
-        //Here we are collectively monitoring each of the thread that are executing above independelty.
+        //Here we are collectively monitoring each of the thread that are executing above independently.
         CompletableFuture<Void> f = CompletableFuture.allOf(f1,f2,f3);
 
         /*
@@ -54,7 +54,7 @@ public class CompletableFutureImpl {
             throw new RuntimeException(e);
         }
         /*
-        CompletableFuture (e.g., the one returned by allOf) to complete exceptionally. When you call f.join(), it will throw a CompletionException that wraps the original NullPointerException. Since join() throws unchecked exceptions, the compiler doesn't force you to catch it, but if it occurs and isn't handled elsewhere, your program will indeed terminate with that exception.
+        CompletableFuture (e.g., the one returned by allOf) to complete exceptionally. When you call f.join(), it will throw a CompletionException that wraps the original checked exceptions like NullPointerException. Since join() throws unchecked exceptions, the compiler doesn't force you to catch it, but if it occurs and isn't handled elsewhere, your program will indeed terminate with that exception.
          */
         f.join();
 

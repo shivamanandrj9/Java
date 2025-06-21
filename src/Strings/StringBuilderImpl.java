@@ -1,5 +1,7 @@
 package Strings;
 
+
+//Since String in immutable it creates an object everytime, that is inefficient when working with loops or there are many operations involved with a given string.
 public class StringBuilderImpl {
     public static void main(String[] args) {
 
@@ -10,7 +12,7 @@ public class StringBuilderImpl {
         sb.append(" Anand");
 
         //removing only the last character of a string. time complexity: O(1)
-        sb.delete(sb.length()-1,sb.length()-1);
+        sb.delete(sb.length()-1,sb.length());
 
         //inserting a character at a particular index. Time complexity: O(n)
         sb.insert(1,"h");

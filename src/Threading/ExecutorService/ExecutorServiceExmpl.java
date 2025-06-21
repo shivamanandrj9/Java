@@ -22,5 +22,8 @@ public class ExecutorServiceExmpl {
             Runnable runnable = () -> System.out.println("Hi"+x);
             executorService.execute(runnable);
         }
+
+        //always do this, otherwise it will keep on running.
+        executorService.shutdown();
     }
 }
