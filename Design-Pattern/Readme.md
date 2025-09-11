@@ -1,6 +1,14 @@
 ![Design Patterns Overview](img/1.png)
 
 
+Class Based (Subclassing/ Overriding):
+//TODO
+
+---
+
+
+
+
 FYI:
 How the server works.
 
@@ -11,3 +19,4 @@ Remember about the thread that the code is shared among the thread for a given p
 So moral of the story:-
 Code start hua-> Everything is compiled and class is loaded(static things that are associated with the class gets created in heap)-> Server up ho gaya(Code hi hai basically on keeping it listening) -> baki request wali line to tab chalegi jab requests ana start hoga and ye multiple threads me parallely chalti hain.
 
+---

@@ -1,12 +1,12 @@
 package creational.abstract_factory;
 
 public class AbstractFactoryProducer {
-    public AbstractFactory getFactoryInstance(String value){
-        if(value.equals("Economic")){
+    public static AbstractFactory getFactoryInstance(String value){
+        if(value.equalsIgnoreCase("Economic")){
             return new EconomicCarFactory();
-        } else if(value.equals("Luxury")){
+        } else if(value.equalsIgnoreCase("Luxury")){
             return new LuxuryCarFactory();
         }
-        return null;
+        throw new IllegalArgumentException("Unknown factory type: " + value);
     }
 }

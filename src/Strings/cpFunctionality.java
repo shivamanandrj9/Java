@@ -2,7 +2,8 @@
 The following functionality that we use in c++.
 
 // C++                            | Java
-// ----------------------------- | --------------------------------------------
+// -----------------------------| --------------------------------------------
+0) char x=s[0];                 | char x=s.charAt(0);
 1) string s = "abcd";           | StringBuilder s = new StringBuilder("abcd");
 2) if(s == "abcd")              | if(s.toString().equals("abcd"));
 3) s.size()                     | s.length();
