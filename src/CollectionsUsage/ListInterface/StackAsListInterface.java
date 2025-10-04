@@ -26,13 +26,10 @@ public class StackAsListInterface {
         ls.add(3);
 
         //fetching
-        System.out.println(ls.get(2));
-
-        //updating
-        ls.set(0,10);
+        System.out.println(ls.get(ls.size()-1));
 
         //deleting
-        ls.remove(1);
+        ls.remove(ls.size()-1);
 
 
     }
