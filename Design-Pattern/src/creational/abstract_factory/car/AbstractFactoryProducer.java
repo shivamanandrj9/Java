@@ -10,3 +10,4 @@ public class AbstractFactoryProducer {
         throw new IllegalArgumentException("Unknown factory type: " + type);
     }
 }
+

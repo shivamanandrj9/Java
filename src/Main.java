@@ -8,8 +8,8 @@ public class Main {
         // to see how IntelliJ IDEA suggests fixing it.
         int a=4;
         int b=10;
-        methods x=new methods();
-        System.out.println(x.dosum(4,5));
+//        methods x=new methods();
+//        System.out.println(x.dosum(4,5));
 
     }
 }

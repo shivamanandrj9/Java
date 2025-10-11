@@ -6,3 +6,4 @@ public class LuxuryHatchbackVariant implements Car {
         System.out.println("Driving Luxury Hatchback Variant");
     }
 }
+

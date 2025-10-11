@@ -6,3 +6,4 @@ public class LuxurySUVVariant implements Car {
         System.out.println("Driving Luxury SUV Variant");
     }
 }
+

@@ -6,3 +6,4 @@ public class WindowsButton implements Button {
         System.out.println("Painting a Windows button");
     }
 }
+

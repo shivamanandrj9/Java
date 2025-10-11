@@ -15,7 +15,7 @@ public class AnonymousClass {
             }
         };
 
-        System.out.println(obj.defaultMethod());
+//        System.out.println(obj.defaultMethod());
         obj.sayHello();
         System.out.println(BasicInterface.doSum(5,7));
     }

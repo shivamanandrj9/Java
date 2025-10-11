@@ -10,3 +10,4 @@ public class MacFactory implements GUIFactory {
         return new MacCheckbox();
     }
 }
+

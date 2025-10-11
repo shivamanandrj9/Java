@@ -20,14 +20,14 @@ public interface BasicInterface {
     */
 
     //private method
-    private int helperMethod(){
-        return 5;
-    }
+//    private int helperMethod(){
+//        return 5;
+//    }
 
     //default method, it can be used in the class implementing this interface and can or cannot be overrided there.
-    default int defaultMethod(){
-        return helperMethod();
-    }
+//    default int defaultMethod(){
+//        return helperMethod();
+//    }
 
     //static method
     static int doSum(int a,int b){

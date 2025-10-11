@@ -6,3 +6,4 @@ public class LuxurySedanVariant implements Car {
         System.out.println("Driving Luxury Sedan Variant");
     }
 }
+

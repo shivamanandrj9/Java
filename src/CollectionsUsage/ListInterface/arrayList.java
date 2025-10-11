@@ -50,7 +50,7 @@ public class arrayList {
         System.out.println(arr);
 
         //removing an element
-        arr.removeLast(); //removes the last element
+//        arr.removeLast(); //removes the last element
         arr.remove(2); //removes using an index
 
 

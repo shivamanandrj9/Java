@@ -6,3 +6,4 @@ public class EconomicSUVVariant implements Car {
         System.out.println("Driving Economic SUV Variant");
     }
 }
+

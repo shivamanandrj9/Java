@@ -6,3 +6,4 @@ public class EconomicHatchbackVariant implements Car {
         System.out.println("Driving Economic Hatchback Variant");
     }
 }
+

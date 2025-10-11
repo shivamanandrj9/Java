@@ -6,3 +6,4 @@ public class EconomicSedanVariant implements Car {
         System.out.println("Driving Economic Sedan Variant");
     }
 }
+

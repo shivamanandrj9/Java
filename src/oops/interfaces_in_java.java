@@ -93,9 +93,9 @@ interface InterfaceD{
     }
 
     //private
-    private void privateMethod(){
-        System.out.println("This is my private method");
-    }
+//    private void privateMethod(){
+//        System.out.println("This is my private method");
+//    }
 
 
 }

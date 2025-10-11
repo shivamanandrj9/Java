@@ -6,3 +6,4 @@ public class MacButton implements Button {
         System.out.println("Painting a Mac button");
     }
 }
+

@@ -5,3 +5,4 @@ public interface AbstractFactory {
     Car createSedan();
     Car createSUV();
 }
+

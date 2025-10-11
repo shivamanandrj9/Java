@@ -24,9 +24,9 @@ public class Join {
         System.out.println("This waited for 5 sec then resumed");
 
 
-        Thread t2 = Thread.ofVirtual().unstarted(runnable);
-        t2.start();
-        t2.join();
+//        Thread t2 = Thread.ofVirtual().unstarted(runnable);
+//        t2.start();
+//        t2.join();
 
     }
 }

@@ -37,11 +37,11 @@ public class UsingThreadImpl {
         Thread gun2= new Thread(bullet2);
 
         //This is a virtual thread. This is a non-daemon thread by default.
-        Thread gun3 = Thread.ofVirtual().unstarted(bullet3);
+//        Thread gun3 = Thread.ofVirtual().unstarted(bullet3);
 
         gun1.start();
         gun2.start();
-        gun3.start();
+//        gun3.start();
 
     }
 

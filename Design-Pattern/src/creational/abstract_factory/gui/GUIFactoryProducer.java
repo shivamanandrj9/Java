@@ -10,3 +10,4 @@ public class GUIFactoryProducer {
         throw new IllegalArgumentException("Unknown OS type: " + osType);
     }
 }
+

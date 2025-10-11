@@ -14,3 +14,4 @@ public class EconomicCarFactory implements AbstractFactory {
         return new EconomicSUVVariant();
     }
 }
+

@@ -6,3 +6,4 @@ public class WindowsCheckbox implements Checkbox {
         System.out.println("Painting a Windows checkbox");
     }
 }
+

@@ -14,3 +14,4 @@ public class LuxuryCarFactory implements AbstractFactory {
         return new LuxurySUVVariant();
     }
 }
+

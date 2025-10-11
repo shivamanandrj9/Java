@@ -37,11 +37,11 @@ public class LinkedList_as_list {
 
         //adding element
 
-        ls.addFirst(1);
-        ls.addFirst(2);
-
-        ls.addLast(3);
-        ls.addLast(4);
+//        ls.addFirst(1);
+//        ls.addFirst(2);
+//
+//        ls.addLast(3);
+//        ls.addLast(4);
 
         ls.add(1,10);
 

@@ -6,3 +6,4 @@ public class MacCheckbox implements Checkbox {
         System.out.println("Painting a Mac checkbox");
     }
 }
+
