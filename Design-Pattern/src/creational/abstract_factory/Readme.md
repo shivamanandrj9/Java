@@ -1,7 +1,7 @@
 # Abstract Factory Pattern
 
 Identification:
-1. You need to create **families of related products** (e.g. different car models) without specifying their concrete classes.
+1. You need to create **families of related products** (e.g. different car models) without specifying their concrete privateClasses.
 2. You want to **switch entire product families** at runtime (e.g. economic vs. luxury variants).
 
 What Abstract Factory ensures:
@@ -25,7 +25,7 @@ RULE OF THUMB: jaha kahi bhi multiple factories hain, try to thing of creating a
 
 Example 1: (Yaha hume 2 factories bananin padi)
 
-There are multiple objects for an interface, here car interface have multiple classes of cars.
+There are multiple objects for an interface, here car interface have multiple privateClasses of cars.
 We then identify any criteria on the basis of which they can be grouped here Economic cars can be grouped together and Luxury cars can be grouped together
 Now since we have made the grouping, there will be seperate factory for each of this group. Basically agar tumhe is group ki car chahiye to ye factory se milega. To aisi humare paas 2 factories banengi
 Ab factory bhi to ek class hi hai, ab uske andar ya to hum ek hi method bana dein jo kuch input lega and kuch conditions ke basis pe jo bhi type ki (economic or luxury) chahiye hogi wo dega. Otherwise har car ke liye apna method. ya kuch aur bhi logic.

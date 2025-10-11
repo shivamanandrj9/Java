@@ -1,4 +1,4 @@
-package superKeyword;
+package ConstructorFlow;
 
 /*
 
@@ -11,7 +11,7 @@ package superKeyword;
     1) Super() -> this will call the constructor of the immediate AbstractClassInJava.parent class ( By default, every constructor method has this written by default, until we change it)
     2) Super(arg1, arg2) -> This will call the parametrized constructor of the immediate AbstractClassInJava.parent class
 
-
+4) So the execution flow is like this, it goes inside the constructor of class B. Now if there is no super method call there explicitly written, it automatically calls super(). otherwise if we explicitly call super method, it should be mentioned as the first line inside the constructor of B.
  */
 
 

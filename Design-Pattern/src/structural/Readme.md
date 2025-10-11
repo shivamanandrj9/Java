@@ -1,1 +1,1 @@
-A structural design pattern is a type of design pattern that focuses on how classes and objects are composed to form larger structures. 
+A structural design pattern is a type of design pattern that focuses on how privateClasses and objects are composed to form larger structures. 

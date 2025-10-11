@@ -1,13 +1,13 @@
-Following are the interfaces which are implemented by the different classes that we use in collection. These all extend the Collection interface.
+Following are the interfaces which are implemented by the different privateClasses that we use in collection. These all extend the Collection interface.
 
 1) List(Interface) -> ArrayList, LinkedList, Stack, Vector
 2) Set -> EnumSet, HashSet, LinkedHashSet, TreeSet
 3) Queue -> ArrayDeque, LinkedList, PriorityQueue
 3) DeQueue -> ArrayDeque, LinkedList, PriorityQueue (So basically ArrayQueue have implementation of both Queue methods and Deque methods, based on what interface we use, we will be able to access those)
 
-All the classes belonging to an interface have same methods
+All the privateClasses belonging to an interface have same methods
 but they are implemeneted in a different manner in each of
-the classes and that's why their complexity is different.
+the privateClasses and that's why their complexity is different.
 
 An use case will be like, you define a general method, that
 takes a List(Inteface) as an argument, and you can pass any of them and they will work fine.

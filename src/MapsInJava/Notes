@@ -2,7 +2,7 @@ Map interface is not a subtype of collection interface. It is a separate interfa
 
 You can implement maps in Java from two interfaces: Map and SortedMap.
 The SortedMap interface extends the Map interface.
-There are three classes to implement maps. These three classes are HashMap, LinkedHashMap, and TreeMap.
+There are three privateClasses to implement maps. These three privateClasses are HashMap, LinkedHashMap, and TreeMap.
 
 i.e. HashMap implements Map interface
      LinkedHashMap implements Map interface
