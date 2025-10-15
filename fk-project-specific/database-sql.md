@@ -41,21 +41,69 @@ FYI:
 
 Transactionality boundary is decided according to our need of ACID.
 
-Within each transaction, there can be multiple flushes but the commit will be at the end of transaction.
+Within each transaction, there can be multiple flushes(DB tak pahuchana) for that transaction but the commit will be at the end of transaction. Once the flushes are done, we issue commit in our code and the hibernate delegates commit to the MySQL and is then commited by the DB engine.
 
-Flush executes SQL within the current (still-open) transaction — changes are not durable and may not be visible to other transactions depending on isolation. Commit finalizes at the DB, making the changes durable and releasing locks. Rollback undoes flushed changes.
+Flush executes SQL within the current (still-open) transaction.
+Hibernate sends SQL and the DB applies the changes inside the current, still‑open transaction. The new state lives in the database’s transactional structures (not in Hibernate caches).
+Changes are not durable and may not be visible to other transactions depending on isolation. Commit finalizes at the DB, making the changes durable and releasing locks. Rollback undoes flushed changes.
+
+
 
 ---
 
+## Violations ##
+
+### Dirty Read ###
+
+A transaction reads data written by another transaction that has not committed yet.
+
+### Non-repeatable reads ###
+
+Within one transaction, re-reading the same row returns a different value because another transaction committed an update in between.
+
+### Phantom reads ###
+
+Re-executing the same range query returns a different set of rows because another transaction inserted/deleted rows matching the range.
+
 ## Transaction Isolation Level ##
 
+Now consider two transactions happening, we have isolation level on the basis of which we decide which actions are getting isolated within two separate transactions.
 
+Isolation level can be set at global, session, transaction level.
+
+### Read Committed ###
+
+Only allows commited values to be read. If T1 changes some value mid transaction and T2 tries to read it, it will read only the older value until T1 is committed.
+
+Violations : non-repeatable reads, phantom reads
+
+
+
+### Read Uncommitted ### 
+
+Allows uncommited values to be read between two transaction.
+
+Violations : Dirty read, non-repeatable reads, phantom reads
+
+### Repeatable Read ### 
+
+Guarantees that within a transaction, reading the same row(s) twice returns the same values (no non‑repeatable reads)
+
+    If T2’s first SELECT happens after T1 commits, T2 sees T1’s updated value.
+    If T2’s first SELECT happened before T1 commits, T2 will not see T1’s change in later plain SELECTs within the same transaction.
+
+Violations : phantom reads (new added values to aengi na)
+
+### Serializable ### 
+Whatever rows or ranges T1 touches (read or write), InnoDB takes next-key locks on them; until T1 ends, T2 cannot UPDATE/DELETE those rows, cannot INSERT new rows into those ranges, and any read that would touch them must wait.
+
+Violations : No violations
 
 
 
 ## SQL Lock Types ##
 
-
+shared, exclusive, update lock, gap lock, next key lock 
 
 
 
