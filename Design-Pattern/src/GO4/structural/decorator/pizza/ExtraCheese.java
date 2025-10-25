@@ -1,0 +1,12 @@
+package GO4.structural.decorator.pizza;
+
+public class ExtraCheese extends Topping{
+
+    public ExtraCheese(BasePizza basePizza){
+        super(basePizza);
+    }
+
+    public int getCost(){
+        return super.basePizza.getCost()+10;
+    }
+}
