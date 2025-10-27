@@ -54,7 +54,7 @@ read(for update) -> X next-key/gap lock
 
 ## Optimistic and Pessimistic Lock ##
 
-S/X are low-level lock modes. By default, plain SELECTs in MVCC don’t lock, while writes take X locks (often on index ranges via next‑key/gap). If you use locking reads (FOR UPDATE / FOR SHARE), the read phase also takes S/X locks.
+S/X are low-level lock modes. By default, plain SELECTs in MVCC don’t lock, while writes take X locks (often on index ranges via next‑key/gap). If you use locking reads (FOR UPDATE(X) / FOR SHARE(S)), the read phase also takes S/X locks.
 
 They don’t protect read-to-write reasoning or rows that don’t yet exist. 
 For example, we use select to get info of some row/s and then we are making decision in between based on the value and then doing some write based on this. So while writing S/X will take lock on the newly written or updated row. If there are two transaction doing the same for example

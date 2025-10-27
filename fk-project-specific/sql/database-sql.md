@@ -33,7 +33,14 @@ There are 3 caches maintained
 3. Query Cache : Stores the queryId and its result for fast serving the query. It relies on L2 for the actual state.
 
 Whenever a query(create, update, read) is triggered from the code for an object for the first time. The object's state is stored in the L1 cache for this session. Any changes that we do in the same transaction is on the L1 cache where we change its state. 
-At the end of transaction we flush this to MySQL and hibernate generates the query looking at the final and initial state of that object. now MySQL commits to the database.
+At the end of transaction we flush this to MySQL and hibernate generates the query looking at the final and initial state of that object. now MySQL commits to the database. 
+
+Some code part is sent to the DB and becomes part of transaction immediately while some become part of transaction after the commit.
+
+Patterns to identify if it becomes part of transaction as soon as the code line got executed:
+1. The query is returning something (update me row count, all the select queries)
+2. Select for update, share
+3. specifically mentioned like .executeUpdate()
 
 ---
 FYI:

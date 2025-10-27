@@ -1,4 +1,7 @@
-1. Basic Thread
+1. creating_thread
+2. NamingThread.java
+3. SharedResourceAccessIssues
+3. Synchronized
 2. Daemon
 3. Join
 4. Platform thread vs virtual Thread doc
