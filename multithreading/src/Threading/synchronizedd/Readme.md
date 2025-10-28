@@ -17,3 +17,6 @@ But for 2 and 3. We don't need to worry, just put synchronized in the method sig
 `public synchronized int methodName(){}`
 
 NOTE: Whatever object that is getting passed within synchronized as lock, if used in two or more places. If the lock is hold at one place, then at other places, the threads will not be able to access it. 
+
+
+When a subclass overrides a method inherited from a superclass, the subclass must explicitly use the synchronized keyword in its new method definition if it wants the overriding method to also be synchronized. Synchronization is not inherited with the method.

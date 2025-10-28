@@ -2,6 +2,7 @@
 2. NamingThread.java
 3. SharedResourceAccessIssues
 3. Synchronized
+4. Volatile
 2. Daemon
 3. Join
 4. Platform thread vs virtual Thread doc
