@@ -3,7 +3,7 @@ Rule of thumb: We need Thread Class and call its Thread.start() to spawn a threa
 Now, the Thread class have two important things
 
 
-1. It is an implementation of Runnable(It is just a functionInterface). That means it will definitely have a run() method implementation inside it. 
+1. It is an implementation of Runnable(a functionInterface). That means it will definitely have a run() method implementation inside it. 
 By default, the run() method that is implemented in there basically calls the .run() of another class (private Runnable target) which is again an implementation of Runnable.
 
 2. .start() method that it have indirectly calls this run() method implementation.

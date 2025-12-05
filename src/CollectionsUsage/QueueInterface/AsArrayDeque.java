@@ -14,12 +14,14 @@ public class AsArrayDeque {
         ELEMENT ADD METHODS
          */
 
-        uq.add(5);
+        uq.add(5); //throws IllegalStateException in case of breach
+        uq.offer(5); //safe -> return true or false
 
         /*
         ELEMENT REMOVE METHODS
          */
-        uq.poll();
+        uq.remove();//throws NoSuchElementException in case of breach
+        uq.poll(); //safe -> return null
 
         /*
         CHECK WHICH ELEMENT IS AT TOP

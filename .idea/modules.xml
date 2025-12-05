@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Design-Pattern/Design-Pattern.iml" filepath="$PROJECT_DIR$/Design-Pattern/Design-Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/FirstProject.iml" filepath="$PROJECT_DIR$/FirstProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LLD-Problems/LLD-Problems.iml" filepath="$PROJECT_DIR$/LLD-Problems/LLD-Problems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LLD-Problems/SolidPractice/SolidPractice.iml" filepath="$PROJECT_DIR$/LLD-Problems/SolidPractice/SolidPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/multithreading/multithreading.iml" filepath="$PROJECT_DIR$/multithreading/multithreading.iml" />
     </modules>
   </component>

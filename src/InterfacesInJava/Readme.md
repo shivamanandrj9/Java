@@ -1,0 +1,2 @@
+1. We can extend an interface to another interface.
+2. We can implement an interface to another abstract class and feel free to not define the methods in that abstract class. Those methods will become abstract then.
