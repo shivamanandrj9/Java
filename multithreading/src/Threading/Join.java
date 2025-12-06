@@ -19,7 +19,7 @@ public class Join {
         Thread t1=new Thread(runnable);
         t1.start();
 
-        t1.join(5000); //this will put the current thread(here main) in the waiting state for 5 sec or until the target thread(here t1). Since it is not a virtual thread, if we not put this statement, main will continue its execution till last line and will wait for the runnable to finish its execution and then terminate. If we don't put any value inside the join, it will wait until t1 is done with its execution.
+        t1.join(5000); //this will put the current thread(here main) in the waiting state for 5 sec or until the target thread(here t1). Since it is not a virtual thread, if we not put this statement, main will continue its execution till last line and will wait for the runnable to finish its execution and then terminate. If we don't put any value inside the join, it will wait on this line until t1 is done with its execution.
 
         System.out.println("This waited for 5 sec then resumed");
 

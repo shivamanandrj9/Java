@@ -1,0 +1,1 @@
+If there is any pending write operation, read should wait until all the write operations are done with.

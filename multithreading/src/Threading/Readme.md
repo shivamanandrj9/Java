@@ -1,17 +1,18 @@
 1. creating_thread
 2. NamingThread.java
 3. SharedResourceAccessIssues
-3. Synchronized
-4. Volatile
+4. Synchronized
+5. Volatile
 6. ThreadMethods
-6. ThreadStates
-7. Problems
-2. Daemon
-3. Join
-4. Platform thread vs virtual Thread doc
-5. Virtual Thread
-7. Runnable 
-8. Callable
-9. Executor Service
-11. Futures
+7. ThreadStates
+8. Problems
+9. Daemon
+10. Join
+11. Thread Priority
+11. Platform thread vs virtual Thread doc
+12. Virtual Thread
+13. Runnable 
+14. Callable
+15. Executor Service
+16. Futures
 

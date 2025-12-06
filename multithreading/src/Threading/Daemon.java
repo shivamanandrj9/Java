@@ -17,7 +17,13 @@ public class Daemon {
         };
 
         Thread t1=new Thread(runnable);
-        t1.setDaemon(true); //this will make this thread stop once the main method stops otherwise main will wait until this thread is done with its execution. Also this is always set before the thread is started.
+        t1.setDaemon(true);
+        /*
+        This will make this thread stop once the main method stops otherwise main will wait until this thread is done with its execution.
+
+        By default, a new thread inherits the daemon status of its parent (the thread that created it).
+        Since we usually create threads from the Main Thread (which is a User Thread/Non-Daemon), the default status of your new thread is Non-Daemon i.e. setDaemon(false) (User Thread)
+         */
         t1.start();
 
         sleep(2000); //2 baar hi chal paega
