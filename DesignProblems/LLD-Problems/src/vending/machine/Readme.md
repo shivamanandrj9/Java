@@ -1,0 +1,1 @@
+Design a vending machine system that supports multiple product types, manage inventory availability, handle various payment methods, and provide a seamless purchase experience.
