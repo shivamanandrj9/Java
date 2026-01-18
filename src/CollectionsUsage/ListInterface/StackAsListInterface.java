@@ -31,6 +31,11 @@ public class StackAsListInterface {
         //deleting
         ls.remove(ls.size()-1);
 
+        /*
+        BUT WE DON'T GENERALLY USE IT BECAUSE IN THE IMPLEMENTATION OF STACK, ALL THE METHODS ARE SYNCHRONIZED AND IN A SINGLE THREAD ENVIRONMENT, WE ARE CONSTANTLY ACQUIRING AND RELEASING THE LOCK.
+
+        Use ArrayDeque (Deque implementation) instead.
+         */
 
     }
 }

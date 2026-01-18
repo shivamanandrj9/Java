@@ -2,11 +2,16 @@
 
 2. For thread safety follow this
 
-You will have a resource whose read, write you will need to manage threadsafely.
+You will have a resource whose read, write you will need to manage thread safely.
 Create one LockManagerClass -> This will own that resource storage in terms of List<>, HashMap etc and it will have the thread safe method to deal with those.
 The service layer will then use those.
 
 Now If you just have to deal with the resource which already is thread safe(and exposed thread safe method) like the ConcurrentHashMap, our previous work is already done. So just use it in the service layer directly.
 
 
-5. Synchronized ke baad concurrent use karne ki jarurat?
+5. Always think ki if we are using thread safe collections, do we need synchronized.
+What was the issue when we were using the ConcurrentHashMap alone?
+Reading in ConcurrentHashMap is allowed, so 2 threads could read the same slots that are occupied and then when they remove from all the free slots, they will see the same set of available slots and take the 0th one.
+
+To solve these kind of problem, use concurrent queue that directly gives you the free slot atomically so that no two threads get the same slot.
+ConcurrentLinkedQueue

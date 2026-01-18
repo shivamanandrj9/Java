@@ -3,7 +3,7 @@ Following are the interfaces which are implemented by the different privateClass
 1) List(Interface) -> ArrayList, LinkedList, Stack, Vector
 2) Set -> EnumSet, HashSet, LinkedHashSet, TreeSet
 3) Queue -> ArrayDeque, LinkedList, PriorityQueue
-3) DeQueue -> ArrayDeque, LinkedList, PriorityQueue (So basically ArrayQueue have implementation of both Queue methods and Deque methods, based on what interface we use, we will be able to access those)
+3) DeQueue -> ArrayDeque, LinkedList (Deque interface actually extends Queue interface and it forces the implementing class to implement extra methods like addFirst()/ addLast(), removeFirst() / removeLast(), peekFirst() / peekLast())
 
 All the privateClasses belonging to an interface have same methods
 but they are implemeneted in a different manner in each of

@@ -17,45 +17,48 @@ package parking.lot.system.service;
 
 import parking.lot.system.Entities.*;
 import parking.lot.system.enums.VehicleType;
+import sun.plugin.dom.exception.InvalidStateException;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import static java.time.LocalDateTime.now;
 
 public class BookingService {
 
-    HashMap<VehicleType, HashMap<Vehicle,SlotVehicleMapping>> bookings;
-    SlotService slotService;
+    ConcurrentHashMap<VehicleType, ConcurrentHashMap<Vehicle,SlotVehicleMapping>> bookings=new ConcurrentHashMap<>();
+    ConcurrentHashMap<VehicleType,ConcurrentLinkedQueue<Slot>> availableSlots=new ConcurrentHashMap<>();
+
+    SlotService slotService=new SlotService();
 
     /*
     TODO: Define constructor
      */
 
     boolean isSlotAvailable(VehicleType vehicleType){
-        int totalSlots=slotService.getSlotCount();
-        int bookedSlots=bookings.get(vehicleType).size();
-
-        return totalSlots>bookedSlots;
+        availableSlots.computeIfAbsent(vehicleType, k ->{
+            ConcurrentLinkedQueue<Slot> freeSlots=new ConcurrentLinkedQueue<>();
+            freeSlots.addAll(slotService.getSlots(vehicleType));
+            return freeSlots;
+        });
+        return !availableSlots.isEmpty();
     }
 
-    synchronized Slot bookSlot(Vehicle vehicle){
+    Slot bookSlot(Vehicle vehicle){
         VehicleType vehicleType=vehicle.getVehicleType();
-        List<Slot> allSlots=slotService.getSlots(vehicleType);
-        List<Slot> occupiedSlotsForVehicle=new ArrayList<>();
-        HashMap<Vehicle,SlotVehicleMapping> occupiedSlots = bookings.get(vehicleType);
-        for(Map.Entry<Vehicle,SlotVehicleMapping> e:occupiedSlots.entrySet()){
-            if(e.getValue().getSlot().getVehicleType()==vehicleType){
-                occupiedSlotsForVehicle.add(e.getValue().getSlot());
-            }
+        availableSlots.computeIfAbsent(vehicleType, k ->{
+            ConcurrentLinkedQueue<Slot> freeSlots=new ConcurrentLinkedQueue<>();
+            freeSlots.addAll(slotService.getSlots(vehicleType));
+            return freeSlots;
+        });
+
+        Slot picked=availableSlots.get(vehicleType).poll();
+        if(picked==null){
+            throw new InvalidStateException("No available slot");
         }
-
-        allSlots.remove(occupiedSlotsForVehicle);
-        Slot picked=occupiedSlotsForVehicle.get(0);
-
-        SlotVehicleMapping slotVehicleMapping=new SlotVehicleMapping(picked, vehicle, now());
-
-        bookings.putIfAbsent(vehicleType, new HashMap<Vehicle, SlotVehicleMapping>());
-        bookings.get(vehicleType).putIfAbsent(vehicle,slotVehicleMapping);
+        bookings.putIfAbsent(vehicleType, new ConcurrentHashMap<>());
+        bookings.get(vehicleType).put(vehicle,new SlotVehicleMapping(picked, vehicle,now()));
         return picked;
     }
 
@@ -66,10 +69,26 @@ public class BookingService {
         return 0;
     }
 
-    synchronized boolean freeSlot(Vehicle vehicle){
-        /*
-        It will just remove that vehicle key from the bookings.
-         */
+    boolean freeSlot(Vehicle vehicle) throws IllegalAccessException {
+        VehicleType vehicleType=vehicle.getVehicleType();
+        Slot occupiedSlot=null;
+        if(!bookings.containsKey(vehicleType)){
+            throw new IllegalAccessException("Vehicle not found");
+        } else{
+            SlotVehicleMapping previouslyMapping=bookings.get(vehicleType).get(vehicle);
+            if(previouslyMapping==null){
+                throw new IllegalAccessException("Vehicle not found");
+            }
+            occupiedSlot=previouslyMapping.getSlot();
+            bookings.remove(previouslyMapping);
+        }
+
+
+        if(!availableSlots.containsKey(vehicleType) || availableSlots.get(vehicleType).contains(occupiedSlot)){
+            throw new IllegalAccessException("Vehicle not found");
+        } else{
+            availableSlots.get(vehicleType).add(occupiedSlot);
+        }
         return true;
     }
 

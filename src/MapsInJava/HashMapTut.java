@@ -42,6 +42,9 @@ public class HashMapTut {
         System.out.println(map.get("Shivam"));
 
         //removing a value
+        /*
+        If a key is not present, it will return null else it will return the value.
+         */
         map.remove("Rohit");
 
         //checking if a key exists
