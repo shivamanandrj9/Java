@@ -1,5 +1,7 @@
 package parking.lot.system.Entities;
 
+import parking.lot.system.enums.VehicleType;
+
 public class Vehicle {
     VehicleType vehicleType;
 

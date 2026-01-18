@@ -16,6 +16,7 @@ package parking.lot.system.service;
 //}
 
 import parking.lot.system.Entities.*;
+import parking.lot.system.enums.VehicleType;
 
 import java.util.*;
 

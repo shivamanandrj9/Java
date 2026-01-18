@@ -1,7 +1,7 @@
 package parking.lot.system.service;
 
 import parking.lot.system.Entities.Slot;
-import parking.lot.system.Entities.VehicleType;
+import parking.lot.system.enums.VehicleType;
 
 import java.util.ArrayList;
 import java.util.List;
