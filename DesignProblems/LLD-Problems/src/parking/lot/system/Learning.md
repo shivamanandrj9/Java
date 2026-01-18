@@ -15,3 +15,6 @@ Reading in ConcurrentHashMap is allowed, so 2 threads could read the same slots 
 
 To solve these kind of problem, use concurrent queue that directly gives you the free slot atomically so that no two threads get the same slot.
 ConcurrentLinkedQueue
+
+
+6. Think of in terms of vehicle number, because vehicle object can be created at the time of entry. Better way is to ovverride the equals method that will be more better

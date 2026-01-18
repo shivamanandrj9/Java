@@ -14,6 +14,9 @@ public class ConcurrentHashMapEx {
 
         /*
         All the methods are same as regular HashMap
+        REMEMBER:
+        ConcurrentHashMap does not allow null keys or null values for one primary reason
+
          */
         mp.put("Hello","World");
         mp.put("Shivam", "Anand");
@@ -32,9 +35,18 @@ public class ConcurrentHashMapEx {
              */
         }
 
+        /*
+        If the key is not present: it will return null
+        If the key was present: it will return the previous value associated with that key and does not override.
+         */
         mp.putIfAbsent("Neerav", "Patel");
 
         //If you want to compute something on the basis of key
+
+        /*
+        If the key is not present: it will return the computedValue
+        If the key was present: it will return the previous value associated with that key and does not override.
+         */
         mp.computeIfAbsent("Neerav", k -> {
             System.out.println("So this k is the same key that has been passed here i.e. Neerav. Whatever we return from here will become the value of this key");
             return "Patel";

@@ -42,7 +42,7 @@ public class BookingService {
             freeSlots.addAll(slotService.getSlots(vehicleType));
             return freeSlots;
         });
-        return !availableSlots.isEmpty();
+        return !availableSlots.get(vehicleType).isEmpty();
     }
 
     Slot bookSlot(Vehicle vehicle){
@@ -58,7 +58,7 @@ public class BookingService {
             throw new InvalidStateException("No available slot");
         }
         bookings.putIfAbsent(vehicleType, new ConcurrentHashMap<>());
-        bookings.get(vehicleType).put(vehicle,new SlotVehicleMapping(picked, vehicle,now()));
+        bookings.get(vehicleType).putIfAbsent(vehicle,new SlotVehicleMapping(picked, vehicle,now()));
         return picked;
     }
 
@@ -72,6 +72,7 @@ public class BookingService {
     boolean freeSlot(Vehicle vehicle) throws IllegalAccessException {
         VehicleType vehicleType=vehicle.getVehicleType();
         Slot occupiedSlot=null;
+        SlotVehicleMapping removedMapping=null;
         if(!bookings.containsKey(vehicleType)){
             throw new IllegalAccessException("Vehicle not found");
         } else{
@@ -80,14 +81,16 @@ public class BookingService {
                 throw new IllegalAccessException("Vehicle not found");
             }
             occupiedSlot=previouslyMapping.getSlot();
-            bookings.remove(previouslyMapping);
+            removedMapping = bookings.get(vehicleType).remove(previouslyMapping);
         }
 
 
         if(!availableSlots.containsKey(vehicleType) || availableSlots.get(vehicleType).contains(occupiedSlot)){
             throw new IllegalAccessException("Vehicle not found");
         } else{
-            availableSlots.get(vehicleType).add(occupiedSlot);
+            if(removedMapping!=null){
+                availableSlots.get(vehicleType).add(occupiedSlot);
+            }
         }
         return true;
     }
