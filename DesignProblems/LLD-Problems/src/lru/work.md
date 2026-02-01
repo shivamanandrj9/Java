@@ -71,6 +71,9 @@ class CacheService<String, String>
 
 class ThreadSafeCacheManager<K,V> implements CacheManager<K,V>
 {
+
+    int poolSize;
+
     void putCache(PutCacheRequest<String, String> req){...};
     void getCache(GetCacheRequest<String> req){...};
 }
