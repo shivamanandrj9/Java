@@ -5,7 +5,7 @@ import lru.entities.PutCacheRequest;
 import lru.services.CacheService;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         CacheService cacheService=new CacheService(2);
         /*
         For the testing purpose, we will spin up 2 threads and add operations in them.
@@ -31,19 +31,18 @@ public class Main {
         });
 
         Thread thread2=new Thread(()->{
-            try {
-                Thread.sleep(100);
+
                 cacheService.putCache(new PutCacheRequest<>("cde","pqr"));
                 cacheService.putCache(new PutCacheRequest<>("mno","ttl"));
                 cacheService.putCache(new PutCacheRequest<>("dhd","xyz"));
                 cacheService.putCache(new PutCacheRequest<>("you","not"));
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+
 
         });
 
         thread1.start();
         thread2.start();
+        thread1.join();
+        thread2.join();
     }
 }

@@ -15,23 +15,32 @@ public class ThreadSafeCacheManager<K,V> implements CacheManager<K,V> {
     @Override
     public synchronized void putCache(PutCacheRequest<K, V> req) {
         if(cache.getPos().containsKey(req.getKey())){
-           Node<K,V> currNode=cache.getPos().get(req.getKey());
-           Node<K,V> prevNode=currNode.getPrev();
-           Node<K,V> nextNode=currNode.getNext();
+            Node<K,V> currNode=cache.getPos().get(req.getKey());
+            Node<K,V> prevNode=currNode.getPrev();
+            Node<K,V> nextNode=currNode.getNext();
 
-           if(nextNode!=null){
-               nextNode.setPrev(prevNode);
-           }
-           if(prevNode!=null){
-               prevNode.setNext(nextNode);
-           }
+            if(currNode==cache.getHead()){
+                cache.getHead().setValue(req.getValue());
+            }
+            else if(currNode==cache.getTail()){
+                prevNode.setNext(null);
+                currNode.setPrev(null);
+                cache.getHead().setPrev(currNode);
+                currNode.setNext(cache.getHead());
+                cache.setHead(currNode);
+                cache.setTail(prevNode);
+                cache.getHead().setValue(req.getValue());
+            }
+            else
+            {
+                prevNode.setNext(nextNode);
+                nextNode.setPrev(prevNode);
+                cache.getHead().setPrev(currNode);
+                currNode.setNext(cache.getHead());
+                cache.setHead(currNode);
+                cache.getHead().setValue(req.getValue());
+            }
 
-           if(cache.getHead()!=currNode){
-               currNode.setPrev(null);
-               currNode.setNext(cache.getHead());
-               cache.setHead(currNode);
-           }
-           cache.getHead().setValue(req.getValue());
         }
         else
         {
@@ -46,6 +55,7 @@ public class ThreadSafeCacheManager<K,V> implements CacheManager<K,V> {
                 newNode.setKey(req.getKey());
                 newNode.setValue(req.getValue());
 
+                cache.getHead().setPrev(newNode);
                 newNode.setNext(cache.getHead());
                 cache.setHead(newNode);
                 cache.getPos().put(req.getKey(),newNode);
@@ -57,8 +67,14 @@ public class ThreadSafeCacheManager<K,V> implements CacheManager<K,V> {
                 Node<K,V> newNode=new Node<>();
                 newNode.setKey(req.getKey());
                 newNode.setValue(req.getValue());
-
+                if(cache.getHead()==null){
+                    cache.setHead(newNode);
+                    cache.setTail(newNode);
+                    cache.getPos().put(req.getKey(),newNode);
+                    return;
+                }
                 newNode.setNext(cache.getHead());
+                cache.getHead().setPrev(newNode);
                 cache.setHead(newNode);
                 cache.getPos().put(req.getKey(),newNode);
             }
@@ -73,19 +89,24 @@ public class ThreadSafeCacheManager<K,V> implements CacheManager<K,V> {
             Node<K,V> prevNode=currNode.getPrev();
             Node<K,V> nextNode=currNode.getNext();
 
-            if(nextNode!=null){
-                nextNode.setPrev(prevNode);
+            if(currNode==cache.getHead()){
+                return cache.getHead().getValue();
             }
-            if(prevNode!=null){
-                prevNode.setNext(nextNode);
-            }
-
-            if(cache.getHead()!=currNode){
+            else if(currNode==cache.getTail()){
+                prevNode.setNext(null);
                 currNode.setPrev(null);
+                cache.getHead().setPrev(currNode);
                 currNode.setNext(cache.getHead());
-                cache.setHead(currNode);
+                return cache.getHead().getValue();
             }
-            return cache.getHead().getValue();
+            else
+            {
+                prevNode.setNext(nextNode);
+                nextNode.setPrev(prevNode);
+                cache.getHead().setPrev(currNode);
+                currNode.setNext(cache.getHead());
+                return cache.getHead().getValue();
+            }
 
         }
         else
