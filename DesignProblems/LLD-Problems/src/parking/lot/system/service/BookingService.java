@@ -58,8 +58,8 @@ public class BookingService {
             throw new InvalidStateException("No available slot");
         }
         bookings.putIfAbsent(vehicleType, new ConcurrentHashMap<>());
-        bookings.get(vehicleType).putIfAbsent(vehicle,new SlotVehicleMapping(picked, vehicle,now()));
-        return picked;
+        SlotVehicleMapping booked = bookings.get(vehicleType).putIfAbsent(vehicle,new SlotVehicleMapping(picked, vehicle,now()));
+        return (booked==null)?picked:booked.getSlot();
     }
 
     double findPrice(Vehicle vehicle){
@@ -81,7 +81,7 @@ public class BookingService {
                 throw new IllegalAccessException("Vehicle not found");
             }
             occupiedSlot=previouslyMapping.getSlot();
-            removedMapping = bookings.get(vehicleType).remove(previouslyMapping);
+            removedMapping = bookings.get(vehicleType).remove(vehicle);
         }
 
 

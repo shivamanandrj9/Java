@@ -18,3 +18,11 @@ ConcurrentLinkedQueue
 
 
 6. Think of in terms of vehicle number, because vehicle object can be created at the time of entry. Better way is to ovverride the equals method that will be more better
+
+----POST VIDEO LEARNINGS----
+
+7. Implement the vehicle abstract class then concrete as car, bikes etc.
+8. Maybe you can first write down entities after reading the requirement then define its attributes once done. But stay chill, anything you do will eventually work out some way or another.
+one to many relationship -> include the entity i.e on the one side inside the many as foreign key( tell to the interviewer). If Many to Many, create a mapping entity. In one to one(think which entity should be independent like vehicle should be independent). Don't worry about how will you get one from other. Wherever you will store this as list, maybe in manager, or separate service, you can always add a method to return the exact entity after searching in that list. 
+9. Singleton pattern for the manager
+10. 
