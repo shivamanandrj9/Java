@@ -42,6 +42,7 @@ Node<K,V>
 
 LRUCache<K,V>
 {
+    int poolSize;
     Node<K,V> head;
     Node<K,V> tail;
     HashMap<K, Node<K,V>> pos;
