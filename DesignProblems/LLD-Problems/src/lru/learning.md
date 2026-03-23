@@ -1,2 +1,2 @@
-1. Have private methods that take care of the operations on the linked list.
+1. Have private methods that take care of the operations on the linked list. like deleteFromList, setListHead, deleteFromList, you can define the parameters needed as per your usecase. 
 2. In place of synchronized, we can use (Concurrent Hash Map but still while doing the manipulation of the linked list, we would require a lock for that period of time, so instead of making the whole method as synchronized, we can use reeentrant lock that can be used mid funtion).
