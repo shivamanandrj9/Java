@@ -8,13 +8,15 @@ CHILLAX (Don't get stuck by the rules)
 1:Many -> Include 1 side of entity to the many one
 Many:Many -> Create a mapping
 
-3. Mention Controller, Service, Interface, Enums.
+3. Mention Controller, Service, Interface, Enums, DAO.
 Flow: Controller ---will have---> Service -----will use----> Manager
 
-4. Read the requirement, write the methods in service layer then put it in service class. Include List<Entity> in respective service class. You can use methods if you want to service's List<Entity>.
+4. Read the requirement, write the methods in service layer then put it in service class. Include List<Entity> in the respective DAO class. Use it via the service layer.
+Note: For concurrency related problems. You will have some threadSafe data structure that you can directly declare in the service layer or the manager.
 
 5. Eventually we will need a Manager either for handling concurrency or core logic.
 
+6. Start from the important service method and go ahead in defining other classes that you would need for that.
 
 
 
