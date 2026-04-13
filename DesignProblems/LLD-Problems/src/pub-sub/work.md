@@ -11,3 +11,33 @@ Design and implement a Publish-Subscribe system that allows publishers to send m
 5. Also one subscriber can subscribe to multiple topics.
 5. As soon as a message is received, by the topic, it will broadcast it to all the subscriber of this topic parallely.
 6. We will have some TTL over the data, so that this topic persist the data for some time and clean it.
+
+# Entities
+
+1. Topic
+    - id: String
+    - name: String
+    - capacity: int
+
+2. Publisher
+    - id: String
+
+4. Message
+    - id: String
+    - payload: String
+    - publisherId: FK
+    - topicId: FK
+    - createdAt: DateTime
+    - isDelivered: boolean
+
+5. Subscriber
+    - id: String
+
+6. TopicSubscriberMapping
+    - topicId: FK
+    - subscriberId: FK
+    - isDeleted: boolean
+
+7. DeliveryLog
+    - messageId: FK
+    - subscriberId: FK
