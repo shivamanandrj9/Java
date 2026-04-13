@@ -10,6 +10,18 @@ Many:Many -> Create a mapping
 
 3. Mention Controller, Service, Interface, Enums, DAO.
 Flow: Controller ---will have---> Service -----will use----> Manager
+We will have following packages/folders based on the requirements
+    1. controllers
+    2. services
+    3. entities
+    4. enums
+    6. daos
+    7. stategies
+        If multiple then create subfolders (applicable for below also)
+        -> vote -> VoteStrategy1, VoteStrategy2
+        -> payment -> PaymentStrategy1, PaymentStrategy2
+    8. states
+    9. registry
 
 4. Read the requirement, write the methods in service layer then put it in service class. Include List<Entity> in the respective DAO class. Use it via the service layer.
 Note: For concurrency related problems. You will have some threadSafe data structure that you can directly declare in the service layer or the manager.

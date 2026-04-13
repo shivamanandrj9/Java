@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LLD-Problems.iml" filepath="$PROJECT_DIR$/LLD-Problems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SolidPractice/SolidPractice.iml" filepath="$PROJECT_DIR$/SolidPractice/SolidPractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/del/del.iml" filepath="$PROJECT_DIR$/src/del/del.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/stack/stack.iml" filepath="$PROJECT_DIR$/src/stack/stack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/task/task.iml" filepath="$PROJECT_DIR$/src/task/task.iml" />
+    </modules>
+  </component>
+</project>
