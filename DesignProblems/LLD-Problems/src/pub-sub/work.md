@@ -15,28 +15,31 @@ Design and implement a Publish-Subscribe system that allows publishers to send m
 # Entities
 
 1. Topic
-    - id: String
+    - id: int
     - name: String
     - capacity: int
 
 2. Publisher
-    - id: String
+    - id: int
 
-4. Message
-    - id: String
+4. Message 
+    - id: int
     - payload: String
     - publisherId: FK
+
+5. MessageTopicMapping
+    - messageId: FK
     - topicId: FK
     - createdAt: DateTime
-    - isDelivered: boolean
 
 5. Subscriber
-    - id: String
+    - id: int
 
 6. TopicSubscriberMapping
     - topicId: FK
     - subscriberId: FK
     - isDeleted: boolean
+    - offset: int
 
 7. DeliveryLog
     - messageId: FK
