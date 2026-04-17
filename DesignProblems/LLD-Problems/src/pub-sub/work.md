@@ -41,6 +41,34 @@ Design and implement a Publish-Subscribe system that allows publishers to send m
     - isDeleted: boolean
     - offset: int
 
-7. DeliveryLog
-    - messageId: FK
-    - subscriberId: FK
+
+# Services
+
+
+# Models
+
+1. TopicContext
+    - Map<SubscriberId, Set<Integer>> inFlights;
+    - BlockingQueue<MessageId> buffer;
+
+
+
+# DAOs
+
+1. TopicDao
+2. PublisherDao
+3. MessageDao
+4. MessageTopicMappingDao
+5. SubscriberDao
+6. TopicSubscriberMappingDao
+
+# Manager
+
+1. RetryManager
+
+2. DispatchManager
+    - Map<TopicId, TopicContext> contexts;
+
+    - void initialize()
+
+
