@@ -34,6 +34,7 @@ Design and implement a Publish-Subscribe system that allows publishers to send m
 
 5. Subscriber
     - id: int
+    - name: String
 
 6. TopicSubscriberMapping
     - topicId: FK
@@ -43,6 +44,17 @@ Design and implement a Publish-Subscribe system that allows publishers to send m
 
 
 # Services
+
+1. MessageService
+    - int publishMessage(topicId, message, publisherId);
+
+2. TopicService
+    - int addTopic(String topicName, int capacity)
+
+3. SubscriberService
+    - int addSubscriber(name)
+    - void listen(topicId, subscriberId)
+
 
 
 # Models
