@@ -1,6 +1,5 @@
 package Threading.Problems.produer.consumer;
 
-import java.sql.Array;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
