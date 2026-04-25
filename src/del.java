@@ -2,38 +2,56 @@ import java.util.*;
 
 public class del{
     public static void main(String[] args) {
-            Node<Integer> head=new Node<>(5);
-            addNode(new Node<Integer>(10),head);
-            addNode(new Node<Integer>(15),head);
+        Pair<Integer, Integer> p1=new Pair<>(10,3);
+        Pair<Integer, Integer> p2=new Pair<>(5,6);
 
-            print(head);
+        List<Pair<Integer,Integer>> ls=new ArrayList<>();
+        ls.add(p1);
+        ls.add(p2);
+
+        Collections.sort(ls, new PairComparator());
+        System.out.println(ls.get(0).getKey());
     }
 
-    static void addNode(Node node, Node head){
-        Node temp=head;
-        while(temp.next!=null){
-            temp=temp.next;
-        }
-        temp.next=node;
-    }
 
-    static void print(Node head){
-        while(head!=null){
-            System.out.println(head.value);
-            head=head.next;
-        }
-    }
 
 
 }
 
-class Node<T>{
-    T value;
-    Node next;
+class Pair<K,V>{
+    K key;
+    V value;
 
-    Node(T val){
-      this.value=val;
-      this.next=null;
+    Pair (K key, V value){
+        this.key=key;
+        this.value=value;
+    }
+
+    K getKey(){
+        return this.key;
+    }
+
+    V getValue(){
+        return this.value;
+    }
+}
+
+class PairComparator implements Comparator<Pair<Integer,Integer>> {
+
+    @Override
+    public int compare(Pair<Integer, Integer> o1, Pair<Integer, Integer> o2) {
+        if(o1.getKey()<o2.getKey()){
+            return -1;
+        }
+        else if(o1.getKey()==o2.getKey()){
+            if(o1.getValue()<=o2.getValue()){
+                return -1;
+            } else {
+                return 1;
+            }
+        } else{
+            return 1;
+        }
     }
 }
 

@@ -15,10 +15,29 @@ public class TopicContext {
         this.inFlights=new HashMap<>();
     }
 
-    public void setInFlights(int messageId, Set<Integer> inProgress){
-        inFlights.put(messageId, inProgress);
+    public void setInFlights(int subscriberId, Set<Integer> inProgress){
+        inFlights.put(subscriberId, inProgress);
     }
 
+    public void addInFlight(int subscriberId, int messageId){
+        inFlights.computeIfAbsent(subscriberId, k -> new TreeSet<>()).add(messageId);
+    }
 
+    public void removeInFlight(int subscriberId, int messageId){
+        Set<Integer> inFlight=inFlights.get(subscriberId);
+        if(inFlight!=null){
+            inFlight.remove(messageId);
+        }
+    }
+
+    public int getCheckpoint(int subscriberId, int messageId){
+        Set<Integer> inFlight=inFlights.get(subscriberId);
+        if(inFlight!=null && !inFlight.isEmpty()){
+            return inFlight.stream().findFirst().get()-1;
+        }
+        else{
+            return messageId;
+        }
+    }
 
 }

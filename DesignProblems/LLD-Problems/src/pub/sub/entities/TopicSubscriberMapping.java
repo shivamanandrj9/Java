@@ -28,5 +28,10 @@ public class TopicSubscriberMapping {
 
     int subscriberId;
     boolean isDeleted;
+
+    public void setOffset(int offset) {
+        this.offset = offset;
+    }
+
     int offset;
 }

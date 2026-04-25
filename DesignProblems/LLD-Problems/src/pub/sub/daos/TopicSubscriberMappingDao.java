@@ -24,4 +24,13 @@ public class TopicSubscriberMappingDao {
             return t.getTopicId() == topicId;
         }).map(TopicSubscriberMapping::getSubscriberId).collect(Collectors.toList());
     }
+
+    public void updateCheckpoint(int topicId, int subscriberId, int checkpoint){
+        TopicSubscriberMapping mapping=topicSubscriberMappings.stream().filter(t ->{
+            return (t.getTopicId()==topicId && t.getSubscriberId()==subscriberId);
+        }).collect(Collectors.toList()).get(0);
+
+        mapping.setOffset(checkpoint);
+
+    }
 }
