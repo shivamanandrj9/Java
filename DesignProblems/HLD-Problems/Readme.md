@@ -9,7 +9,7 @@ To think about in terms of each of the NFR requirements.
 
 2. Low Latency
    1. Caching
-   2. Unncessary reads or writes happening at DB
+   2. Unncessary reads or writes happening at DB. (Unncessary calls for validation)
    3. CDNs
    4. Async Processing
 
