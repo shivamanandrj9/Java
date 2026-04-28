@@ -1,6 +1,9 @@
 package task.management.system.services;
 
-public class UserService implements Observer<UserEventContract>{
+import task.management.system.interfaces.Observer;
+import task.management.system.models.UserEventContract;
+
+public class UserService implements Observer<UserEventContract> {
 
     ExternalEmailService emailService;
 
