@@ -1,0 +1,1 @@
+1. Don't use softDelted until you have an usecase for audit.
