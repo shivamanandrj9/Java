@@ -19,6 +19,7 @@ Design and implement a splitwise system that allows users to split expenses amon
 1. Group
     - id: Integer
     - name: String
+    - owner: FK
 
 2. User
     - id: Integer
@@ -34,12 +35,64 @@ Design and implement a splitwise system that allows users to split expenses amon
     - amount: Double
     - userId: FK // This is the user that paid
     - groupId: FK
-    - type: (SETTLEMENT/SPEND)
 
-5. Participant
+5. ExpenseShare
     - expenseId: FK
     - userId: FK //Who all were part of the expense
     - amount: Double
+
+6. Settlement
+    - id: Integer
+    - groupId: FK
+    - paidBy: FK
+    - paidTo: FK
+    - amount: Double
+
+7. GroupBalance //This is to simplify the number of transactions
+    - groupdId: FK
+    - userId: FK
+    - amount 
+
+
+# Services
+
+String createGroup(String groupName, String userId) {...};
+String addMembers(String groupId, String userId) {...};
+void addExpense(ExpenseAddtionDTO expense) {...};
+void deleteExpense(String expseneId) {...};
+void addSettlement(SettlementDTO settlement) {...};
+
+
+# Models
+
+ExpenseAdditionDTO {   
+    String groupId;
+    Double amountPaid; 
+    String payerId;
+    String title; 
+    List<Split> splitAmount;
+}
+
+Split {
+    String userId;
+    Double amount;
+}
+
+SettlementDTO {
+    String groupId, 
+    String paidBy, 
+    String paidTo, 
+    Double amount
+}
+
+# RaceConditions
+
+1. While doing something with the expense we are also updating GroupBalance table. 
+-> So in your interview, lead with SELECT FOR UPDATE or optimistic locking, and mention synchronized only as a limited case.
+
+
+
+
 
 
 
