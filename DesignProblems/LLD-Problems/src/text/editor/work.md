@@ -57,7 +57,7 @@ Similarly other operations concrete implementation
 write -> (pos, text)
 delete -> (pos, length)
 shift -> (newPos)
-update -> (pos, currentText, newText)
+update -> (pos, oldText, newText)
 
 
 
