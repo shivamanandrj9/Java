@@ -13,3 +13,24 @@ Desing a meeting room booking system
 5. Once booked, user will be notified. 
 6. User can cancel it anytime.
 7. User can reschedule the meeting.
+
+# Entities
+
+1. Room
+    - id: Integer
+    - name: String
+    - capacity: Integer
+
+2. User
+    - id: Integer
+    - name: String
+    - email: String
+
+3. RoomReservation
+    - id: Integer
+    - roomId: FK
+    - date: String
+    - startTime: String
+    - endTime: String
+    - isActive: Boolean
+    - userId: FK
