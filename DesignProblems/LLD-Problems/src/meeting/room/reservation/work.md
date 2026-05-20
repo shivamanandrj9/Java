@@ -1,18 +1,19 @@
 # Problem Statement
 
-Desing a meeting room booking system
+Design a meeting room reservation platform that allows employees in an organization to book rooms for meetings, check availabiliity and manage bookings.
 
 # System Requirements
 
-1. There will be some fixed set of meeting rooms. 
-2. Every room will have some capacity. 
-3. A user trying to book a room will request with the number of person they are trying to accomodate and the time slot for which they want the room.
-4. If there are multiple rooms available satisfying the criteria, we would go via this
-    - Find the one with minimum extra space as requested.
-    - Find the lexicographically smallest one.
-5. Once booked, user will be notified. 
-6. User can cancel it anytime.
-7. User can reschedule the meeting.
+1. An employee can check for the (date, timeSlot, capacity), what all meeting rooms that are available.
+2. Employee can then go ahead and select the meeting room which they want to book.
+3. They can cancel an existing meeting.
+4. System should handle overlapping requests gracefully.
+5. For a meeting room the admin should be able to see all the meetings that are scheduled in that room.
+
+# Concurrency Aspect
+
+1. Two person trying to book overlapping should not be able to book it. One of them will fail to do so.
+
 
 # Entities
 
@@ -21,7 +22,7 @@ Desing a meeting room booking system
     - name: String
     - capacity: Integer
 
-2. User
+2. Employee
     - id: Integer
     - name: String
     - email: String
@@ -34,3 +35,8 @@ Desing a meeting room booking system
     - endTime: String
     - isActive: Boolean
     - userId: FK
+
+
+
+
+

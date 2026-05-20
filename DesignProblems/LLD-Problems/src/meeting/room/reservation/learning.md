@@ -9,3 +9,4 @@
 
 1. If confirmation would have come and locking of the room for that time period. How would the solution change.
 2. If someone does not get any meeting room, our system notifies if the requirement is met.
+3. How will the synchronization will work at DB level.
