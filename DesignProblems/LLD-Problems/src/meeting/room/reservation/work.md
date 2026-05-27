@@ -42,8 +42,8 @@ Design a meeting room reservation platform that allows employees in an organizat
     1. List<RoomInfo> getAvailableRooms(LocalDate date, LocalTime startTime, LocalTime endTime, Integer capacity);
     
 2. BookingService
-    1. int bookRoom(Integer id, LocalTime startTime, LocalTime endTime, LocalDate date)
-    2. int cancelBooking(Integer bookingId)
+    1. Integer bookRoom(Integer id, LocalTime startTime, LocalTime endTime, LocalDate date)
+    2. Integer cancelBooking(Integer bookingId)
     3. List<BookingInfo> getBookingInfo(Integer userId)
     4. List<BookingInfo> getnBookingInfo(Integer roomId)
 
