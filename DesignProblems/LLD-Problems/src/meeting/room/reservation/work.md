@@ -19,7 +19,7 @@ Design a meeting room reservation platform that allows employees in an organizat
 
 1. Room
     - id: Integer
-    - name: String
+    - name: String (Unique)
     - capacity: Integer
 
 2. Employee
@@ -30,11 +30,38 @@ Design a meeting room reservation platform that allows employees in an organizat
 3. RoomReservation
     - id: Integer
     - roomId: FK
-    - date: String
-    - startTime: String
-    - endTime: String
+    - date: LocalDate
+    - startTime: LocalTime
+    - endTime: LocalTime
     - isActive: Boolean
     - userId: FK
+
+# Services
+
+1. MeetingRoomService
+    1. List<RoomInfo> getAvailableRooms(LocalDate date, LocalTime startTime, LocalTime endTime, Integer capacity);
+    
+2. BookingService
+    1. int bookRoom(Integer id, LocalTime startTime, LocalTime endTime, LocalDate date)
+    2. int cancelBooking(Integer bookingId)
+    3. List<BookingInfo> getBookingInfo(Integer userId)
+    4. List<BookingInfo> getnBookingInfo(Integer roomId)
+
+
+# Models
+
+1. RoomInfo
+    - roomId
+    - roomName
+    - capacity
+
+2. BookingInfo
+    - bookingId
+    - roomName
+    - date
+    - startTime
+    - endTime
+
 
 
 
