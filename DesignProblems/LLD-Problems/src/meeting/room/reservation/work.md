@@ -42,10 +42,10 @@ Design a meeting room reservation platform that allows employees in an organizat
     1. List<RoomInfo> getAvailableRooms(LocalDate date, LocalTime startTime, LocalTime endTime, Integer capacity);
     
 2. BookingService
-    1. Integer bookRoom(Integer id, LocalTime startTime, LocalTime endTime, LocalDate date)
-    2. Integer cancelBooking(Integer bookingId)
-    3. List<BookingInfo> getBookingInfo(Integer userId)
-    4. List<BookingInfo> getnBookingInfo(Integer roomId)
+    1. Integer bookRoom(Integer roomId, Integer userId, LocalTime startTime, LocalTime endTime, LocalDate date) 
+    2. Integer cancelBooking(Integer userId, Integer bookingId)
+    3. List<UserBookingInfo> getUserBookingInfo(Integer userId)
+    4. List<RoomBookingStatus> getRoomBookingStatus(Integer roomId, Integer userId)
 
 
 # Models
@@ -55,12 +55,21 @@ Design a meeting room reservation platform that allows employees in an organizat
     - roomName
     - capacity
 
-2. BookingInfo
+2. UserBookingInfo
     - bookingId
     - roomName
     - date
     - startTime
     - endTime
+
+3. RoomBookingStat
+    - bookingId
+    - date
+    - startTime
+    - endTime
+    - userId
+
+
 
 
 
