@@ -62,7 +62,7 @@ Design a meeting room reservation platform that allows employees in an organizat
     - startTime
     - endTime
 
-3. RoomBookingStat
+3. RoomBookingStatus
     - bookingId
     - date
     - startTime
