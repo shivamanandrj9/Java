@@ -47,6 +47,11 @@ Design a meeting room reservation platform that allows employees in an organizat
     3. List<UserBookingInfo> getUserBookingInfo(Integer userId)
     4. List<RoomBookingStatus> getRoomBookingStatus(Integer roomId, Integer userId)
 
+# LockingManagers
+
+1. BookingLockingInterface
+    1. void acquireLock(LocalDate date, Integer roomId);
+    2. void releaseLock(LocalDate date, Integer roomId);
 
 # Models
 
