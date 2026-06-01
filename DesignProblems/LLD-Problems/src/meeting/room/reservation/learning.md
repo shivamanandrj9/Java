@@ -15,6 +15,10 @@
         1. It can grow as there will be LockingObject that can grow based on some parameter that keeps on changing like here the date part. Solution is to use an executor service that will spin a thread at some specified intervals to clean up the values.
         2. In the distributed it can still fail. -> Solution is to use some layer to check the lock like the redis. This will create a variable lock and keep status of whether it is taken or not. The acquireLock() method definition will issue a query that if the lockStatus is false then make it true. This will solve the problem. Also the first problem will be solved by this only if we set a TTL.
 
+2. Think about sloting and checking the locking status after sorting some kind of string generated for the slot. Like here roomId-YYYY-MM-DD-slotNumber. We can break the days into 30 mins slots.
+
+3. For the above use cases we should always use tryLockWithTimeout
+
 # WHAT IF?
 
 2. If someone does not get any meeting room, our system notifies if the requirement is met.
