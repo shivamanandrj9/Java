@@ -1,4 +1,4 @@
-package booking.managers.impl;
+package meeting.room.reservation.booking.managers.impl;
 
 public class LocalBookingManager implements BookingManager {
     

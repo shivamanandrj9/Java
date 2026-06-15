@@ -3,9 +3,11 @@ package daos;
 public class LocalRoomReservationDao implements RoomReservationDao {
 
     List<RoomReservation> roomReservations;
+    RoomDao roomDao;
     
-    public LocalRoomReservationDao(){
-        this.roomReservations=new ArrayList<>();
+    public LocalRoomReservationDao(List<RoomReservation> roomReservations, RoomDao roomDao){
+        this.roomReservations=roomReservations;
+        this.roomDao=roomDao;
     } 
 
     public Integer insert(RoomReservation roomReservation){
@@ -21,5 +23,38 @@ public class LocalRoomReservationDao implements RoomReservationDao {
         }
         return flag;
     }
+
+    public List<Room> getAvailableRooms(LocalDate date, LocalTime startTime, LocalTime endTime, Integer capacity){
+        Set<Integer> overlappingRoomIds=new HashSet<>();
+        for(RoomReservation roomReservation: this.roomReservations){
+            if(!(roomReservation.date==date && roomReservation.isActive==Boolean.TRUE)) return;
+            if(endTime.compareTo(roomReservation.startTime)==-1 || roomReservation.endTime.compareTo(startTime)==-1) return;
+            overlappingRoomIds.add(roomReservation.id);
+        }
+
+        List<Room> allRooms=this.roomDao.fetchAll();
+
+        /*
+        Check if there is any better way
+         */
+
+        List<Room> availableRooms;
+
+        for(Room room: allRooms){
+            if(!overlappingRoomIds.contains(room.id) && room.capacity>=capacity){
+                availableRooms.add(room);
+            }
+        }
+        return availabelRooms;
+
+    }
+
+    public Integer id;
+    public Integer roomId;
+    public LocalDate date;
+    public LocalTime startTime;
+    public LocalTime endTime;
+    public Boolean isActive;
+    public Integer userId;
 
 }

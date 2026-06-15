@@ -1,13 +1,17 @@
 package entities;
 
 public class RoomReservation{
-    private Integer id;
-    private Integer roomId;
-    private LocalDate date;
-    private LocalTime startTime;
-    private LocalTime endTime;
-    private Boolean isActive;
-    private Integer userId;
+
+    /*
+    Just making it public here just to make the code runnable and don't have to implement the getter and setter. It will be private in the actual builder implementation example.
+     */
+    public Integer id;
+    public Integer roomId;
+    public LocalDate date;
+    public LocalTime startTime;
+    public LocalTime endTime;
+    public Boolean isActive;
+    public Integer userId;
 
     RoomReservation(RoomReservationBuilder roomReservationBuilder)
     {
