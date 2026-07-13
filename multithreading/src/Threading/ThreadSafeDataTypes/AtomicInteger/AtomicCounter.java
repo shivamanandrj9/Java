@@ -9,6 +9,19 @@ public class AtomicCounter {
         var.incrementAndGet();
     }
 
+    static void incrementByValue(Integer x){
+        /*
+        If you want to make some complex logic atomic
+         */
+        var.updateAndGet(current->{
+            current+=x;
+            if(current>100000){
+                current=100000;
+            }
+            return current;
+        });
+    }
+
     static int getVar(){
         return var.get();
         /*
@@ -25,7 +38,7 @@ public class AtomicCounter {
 
         Thread t2=new Thread(()->{
             for(int i=0;i<10000;i++){
-                increment();
+                incrementByValue(1);
             }
         });
 
