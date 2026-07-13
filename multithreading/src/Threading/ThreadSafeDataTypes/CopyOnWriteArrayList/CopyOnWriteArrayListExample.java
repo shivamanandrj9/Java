@@ -1,4 +1,4 @@
-package Threading.ThreadSafeDataTypes.listInterface;
+package Threading.ThreadSafeDataTypes.CopyOnWriteArrayList;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

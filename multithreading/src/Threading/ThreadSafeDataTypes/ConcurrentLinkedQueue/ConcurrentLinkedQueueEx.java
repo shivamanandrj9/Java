@@ -1,4 +1,4 @@
-package Threading.ThreadSafeDataTypes;
+package Threading.ThreadSafeDataTypes.ConcurrentLinkedQueue;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 

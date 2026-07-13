@@ -1,4 +1,4 @@
-package Threading.ThreadSafeDataTypes.queueInterface.blockingQueueInterface;
+package Threading.ThreadSafeDataTypes.ArrayBlockingQueue;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

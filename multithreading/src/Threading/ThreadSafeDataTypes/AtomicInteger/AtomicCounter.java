@@ -1,4 +1,4 @@
-package Threading.Atomic;
+package Threading.ThreadSafeDataTypes.AtomicInteger;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

@@ -1,4 +1,4 @@
-package Threading.ThreadSafeDataTypes;
+package Threading.ThreadSafeDataTypes.ConcurrentHashMap;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -57,6 +57,17 @@ public class ConcurrentHashMapEx {
             System.out.println("So this k and v is the same key and value that has been passed here i.e. Neerav. Whatever we return from here will replace the value of this key");
             return "Patel";
         });
+
+        //If you are not sure whether the key is present or absent, use this
+        //if the key was prevent the "v" will have that value otherwise it will be null.
+        mp.compute("Kishlay",(k,v)->{
+            if(v==null){
+                return "Raj";
+            }
+            return "Anand";
+            
+        });
+
 
 
     }
